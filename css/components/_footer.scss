@@ -1,0 +1,125 @@
+.footer {
+    background: linear-gradient(160deg, #FDF2F8, #F0FDF4, #FEFCE8);
+    padding: 20px 48px 0;
+    margin-top: auto;
+
+    &__top {
+        display: flex;
+        justify-content: center;   /* centre les 3 blocs */
+        align-items: flex-start;
+        gap: 240px;                 /* espace entre les blocs */
+        padding-top: 10px;
+    }
+
+    &__gauche {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #222;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+    }
+
+    &__milieu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+        }
+
+        a {
+            font-size: 0.95rem;
+            color: #222;
+            text-decoration: none;
+
+            &:hover { text-decoration: underline; }
+        }
+    }
+
+    &__droite {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+        }
+    }
+
+    &__reseaux {
+        display: flex;
+        gap: 14px;
+    }
+
+    &__rond {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid #ddd;
+        background: #f0f0f0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+        &__ligne {
+        height: 1px;
+        background: rgba(0,0,0,0.1);
+        margin: 15px 270px 0;      /* ligne encore plus courte */
+    }
+
+    &__bas {
+        display: flex;
+        justify-content: center;   /* centre les deux textes */
+        align-items: center;
+        gap: 745px;                 /* espace entre les deux */
+        padding: 16px 0;
+
+        p {
+            font-size: 12px;
+            color: #999;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 20px 24px 0;
+
+        &__top {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 24px;
+        }
+
+        &__bas {
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livret Touristique</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="nav-container"></div>
+
+    <section class="projet">
+
+        <div class="projet__hero">
+            <div class="projet__hero-gauche">
+                <p class="projet__categorie">Graphisme · Édition · Print</p>
+                <h1 class="projet__titre">Livret<br>de <em>voyage</em></h1>
+                <p class="projet__desc">Conception graphique complète d'un livret de voyage — mise en page, choix typographiques, traitement photographique et narration visuelle répartis sur 8 pages.</p>
+            </div>
+            <div class="projet__hero-droite">
+                <img src="img/Mockupmagazine.webp" alt="">
+            </div>
+        </div>
+
+        <p class="projet__section-titre">Aperçu des pages</p>
+
+        <div class="carousel">
+            <button class="carousel__btn carousel__btn--prev" id="prev">&#10094;</button>
+            <div class="carousel__viewport">
+                <div class="carousel__track" id="track">
+                    <div class="carousel__item">
+                        <img src="img/page2.webp" alt="Page 2">
+                        <span class="carousel__num">02</span>
+                        <span class="carousel__nom">Mardi</span>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="img/page3.webp" alt="Page 3">
+                        <span class="carousel__num">03</span>
+                        <span class="carousel__nom">Mercredi</span>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="img/page4.webp" alt="Page 4">
+                        <span class="carousel__num">04</span>
+                        <span class="carousel__nom"></span>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="img/page5.webp" alt="Page 5">
+                        <span class="carousel__num">05</span>
+                        <span class="carousel__nom">Jeudi</span>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="img/page6.webp" alt="Page 6">
+                        <span class="carousel__num">06</span>
+                        <span class="carousel__nom"></span>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="img/page7.webp" alt="Page 7">
+                        <span class="carousel__num">07</span>
+                        <span class="carousel__nom"></span>
+                    </div>
+                    <div class="carousel__item">
+                        <img src="img/page8.webp" alt="Page 1">
+                        <span class="carousel__num">01</span>
+                        <span class="carousel__nom">Vendredi</span>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel__btn carousel__btn--next" id="next">&#10095;</button>
+        </div>
+
+        <div class="carousel__dots" id="dots"></div>
+
+    </section>
+
+    <div id="footer-container"></div>
+    <script src="js/nav.js"></script>
+    <script src="js/feuillettouristique.js"></script>
+
+</body>
+</html>

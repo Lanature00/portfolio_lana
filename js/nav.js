@@ -35,7 +35,7 @@ document.getElementById('footer-container').innerHTML = `
                             <img src="img/linkedin.webp" alt="LinkedIn">
                         </a>
                     </div>
-                    <div class="footer__rond"><img src="img/social3.jpg" alt="réseau 3"></div>
+                    <div class="footer__rond"><img src="img/social3.webp" alt="réseau 3"></div>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background-image: url("../img/background.jpg");
+        background-image: url("../img/background.webp");
         background-size: cover;
         background-position: center 85%;
         background-repeat: no-repeat;
@@ -75,19 +75,20 @@
     background: linear-gradient(135deg, #FDF2F8, #F0FDF4, #FEFCE8);
     padding: 0 80px;
 
-    &__top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 120px;
-    }
+      &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 120px;
+    max-width: calc(700px * 2 + 80px);   /* ✅ suit la largeur des grands écrans */
+    margin: 0 auto;
+}
 
     &__titre {
-        font-size: 2.8rem;
+        font-size: clamp(1.5rem, 4vw, 2.8rem);
         font-weight: 700;
         color: #222;
         letter-spacing: 1px;
-        padding-left: 125px;
     }
 
     &__lien {
@@ -111,9 +112,9 @@
         }
     }
 
-    &__projets {
+        &__projets {
         display: grid;
-        grid-template-columns: 600px 600px;
+        grid-template-columns: repeat(2, minmax(0, 600px));  /* ✅ s'adapte à l'écran */
         gap: 60px;
         padding-top: 40px;
         padding-bottom: 100px;
@@ -124,6 +125,8 @@
     &__carte {
         position: relative;
         cursor: pointer;
+        text-decoration: none;   /* ✅ pour le lien <a> */
+        display: block;          /* ✅ pour le lien <a> */
 
         img {
             width: 100%;
@@ -174,7 +177,7 @@
         }
     }
 
-    @media (max-width: 768px) {
+      @media (max-width: 768px) {
         padding: 0 24px;
 
         &__top {
@@ -193,8 +196,23 @@
 
         &__carte {
             &:last-child {
-                margin-top: 0;            /* ✅ supprime le décalage diagonal */
+                margin-top: 0;
             }
         }
     }
+
+    @media (min-width: 1200px) {
+    &__projets {
+        grid-template-columns: repeat(2, minmax(0, 700px));
+        gap: 80px;
+    }
+
+    &__carte img {
+        height: 480px;
+    }
+
+    &__carte__voile {
+        height: 480px;
+    }
+}
 }

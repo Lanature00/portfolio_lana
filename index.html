@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
+    <link rel="preload" as="image" href="img/background.webp">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,20 +27,28 @@
         </div>
 
         <div class="travaux__projets">
-            <div class="travaux__carte">
-                <img src="img/Mockupmagazine.png" alt="Projet 1">
+            <a href="feuillettouristique.html" class="travaux__carte">
+                <img
+                    src="img/Mockupmagazine.webp"
+                    srcset="img/Mockupmagazine-small.webp 400w, img/Mockupmagazine.webp 800w"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    alt="Livret de voyages">
                 <div class="travaux__carte__voile"></div>
                 <div class="travaux__carte__info">
                     <span class="travaux__carte__label">Graphisme</span>
-                    <span class="travaux__carte__nom">Livret de viyages</span>
+                    <span class="travaux__carte__nom">Livret de voyages</span>
                 </div>
-            </div>
+            </a>
             <div class="travaux__carte">
-                <img src="img/projet2.jpg" alt="Projet 2">
+                <img
+                    src="img/fuji.webp"
+                    srcset="img/projet2-small.webp 400w, img/fuji.webp 800w"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    alt="Projet 2">
                 <div class="travaux__carte__voile"></div>
                 <div class="travaux__carte__info">
-                    <span class="travaux__carte__label">Web</span>
-                    <span class="travaux__carte__nom">Projet 2</span>
+                    <span class="travaux__carte__label">Blender</span>
+                    <span class="travaux__carte__nom">Appareil photo</span>
                 </div>
             </div>
         </div>

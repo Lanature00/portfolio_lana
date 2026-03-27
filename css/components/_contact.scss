@@ -1,0 +1,161 @@
+.contact {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #FDF2F8, #F0FDF4, #FEFCE8);
+    padding: 120px 80px 100px;
+
+    &__haut {
+        margin-bottom: 80px;
+    }
+
+    &__tag {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #888;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    &__titre {
+        font-size: 5rem;
+        font-weight: 800;
+        color: #222;
+        line-height: 1.05;
+
+        em {
+            font-style: italic;
+            font-weight: 400;
+        }
+    }
+
+    &__contenu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+    }
+
+    &__label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #888;
+        display: block;
+        margin-bottom: 32px;
+    }
+
+    &__phrase {
+        font-size: 1.6rem;
+        color: #222;
+        line-height: 2.2;
+        margin-bottom: 48px;
+    }
+
+    &__input {
+        background: none;
+        border: none;
+        border-bottom: 1.5px solid #c47c5a;
+        font-size: 1.6rem;
+        font-style: italic;
+        color: #c47c5a;
+        width: 180px;
+        outline: none;
+        padding: 0 4px;
+
+        &::placeholder {
+            color: #c47c5a;
+            opacity: 0.6;
+        }
+    }
+
+    &__btn {
+        padding: 16px 32px;
+        border: 1.5px solid #222;
+        border-radius: 50px;
+        background: none;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #222;
+        cursor: pointer;
+        transition: background 0.25s, color 0.25s;
+
+        &:hover {
+            background: #222;
+            color: #fff;
+        }
+    }
+
+    &__confirm {
+        margin-top: 16px;
+        font-size: 0.9rem;
+        color: #888;
+        font-style: italic;
+    }
+
+    &__card {
+        background: rgba(0,0,0,0.04);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 40px;
+    }
+
+    &__card-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #888;
+        display: block;
+        margin-bottom: 12px;
+    }
+
+    &__email {
+        font-size: 1.1rem;
+        color: #222;
+        text-decoration: none;
+        font-weight: 600;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__reseaux {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__reseau {
+        font-size: 1rem;
+        color: #222;
+        text-decoration: none;
+        transition: color 0.25s;
+
+        &:hover {
+            color: #c47c5a;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 100px 24px 60px;
+
+        &__titre {
+            font-size: 3.5rem;
+        }
+
+        &__contenu {
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        &__phrase {
+            font-size: 1.2rem;
+        }
+
+        &__input {
+            font-size: 1.2rem;
+            width: 130px;
+        }
+    }
+}

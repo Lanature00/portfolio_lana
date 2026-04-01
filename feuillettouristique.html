@@ -8,26 +8,37 @@
 </head>
 <body>
 
-    <header class="projet-hero-full">
-        <img src="img/Espagne.webp" alt="Livret Touristique" class="projet-hero-full__img">
-    </header>
-
+    <!-- NAV -->
     <div id="nav-container"></div>
+
+    <!-- HERO -->
+    <header class="projet-hero-full">
+        <img src="img/Espagne.webp" 
+             alt="Livret Touristique" 
+             class="projet-hero-full__img"
+             loading="eager">
+    </header>
 
     <section class="projet">
 
+        <!-- Introduction -->
         <div class="projet__hero">
             <div class="projet__hero-contenu">
                 <p class="projet__categorie">Graphisme · Édition · Print</p>
                 <h1 class="projet__titre">Livret<br>de <em>voyage</em></h1>
-                <p class="projet__desc">Conception graphique complète d'un livret de voyage — mise en page, choix typographiques, traitement photographique et narration visuelle répartis sur 8 pages.</p>
+                <p class="projet__desc">
+                    Conception graphique complète d'un livret de voyage — mise en page, choix typographiques, 
+                    traitement photographique et narration visuelle répartis sur 8 pages.
+                </p>
             </div>
-            </div>
+        </div>
 
+        <!-- Section Carousel -->
         <p class="projet__section-titre">Aperçu des pages</p>
 
         <div class="carousel">
-            <button class="carousel__btn carousel__btn--prev" id="prev">&#10094;</button>
+            <button class="carousel__btn carousel__btn--prev" id="prev" aria-label="Précédent">&#10094;</button>
+            
             <div class="carousel__viewport">
                 <div class="carousel__track" id="track">
                     <div class="carousel__item">
@@ -61,20 +72,24 @@
                         <span class="carousel__nom"></span>
                     </div>
                     <div class="carousel__item">
-                        <img src="img/page8.webp" alt="Page 1">
-                        <span class="carousel__num">01</span>
-                        <span class="carousel__nom">Vendredi</span>
+                        <img src="img/page8.webp" alt="Page 8">
+                        <span class="carousel__num">08</span>
+                        <span class="carousel__nom"></span>
                     </div>
                 </div>
             </div>
-            <button class="carousel__btn carousel__btn--next" id="next">&#10095;</button>
+
+            <button class="carousel__btn carousel__btn--next" id="next" aria-label="Suivant">&#10095;</button>
         </div>
 
         <div class="carousel__dots" id="dots"></div>
 
     </section>
 
+    <!-- FOOTER -->
     <div id="footer-container"></div>
+
+    <!-- Scripts -->
     <script src="js/nav.js"></script>
     <script src="js/feuillettouristique.js"></script>
 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Une Ligne et des Âmes — Exposition</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-une-ligne">
+
+  <!-- NAV injectée dynamiquement -->
+  <div id="nav-container"></div>
+
+  <!-- HERO PLEIN ÉCRAN -->
+  <header class="projet-hero-full">
+    <img src="img/Posters_Mockup.webp" 
+         alt="Mockup Une Ligne et des Âmes" 
+         class="projet-hero-full__img">
+  </header>
+
+  <section class="projet">
+
+    <!-- INTRO -->
+    <div class="projet__hero">
+      <div class="projet__hero-contenu">
+        <p class="projet__categorie">Graphisme · Sérigraphie · Exposition</p>
+        <h1 class="projet__titre">Une Ligne<br><em>et des Âmes</em></h1>
+        <p class="projet__desc">
+          Conception de l'identité graphique et impression sérigraphique de l'exposition collective 
+          <em>Une Ligne et des Âmes</em> — affiche, feuillet et supports — réalisés avec la compagnie 
+          Les Armoires Pleines à partir d'un trajet photographique sur la Valouette.
+        </p>
+      </div>
+
+      <div class="projet__meta">
+        <div class="meta-grid">
+          <div class="meta-item">
+            <label>Année</label>
+            <p>2024</p>
+          </div>
+          <div class="meta-item">
+            <label>Lieu</label>
+            <p>Écomusée Grand-Orly<br>Fresnes (94)</p>
+          </div>
+          <div class="meta-item">
+            <label>Dates</label>
+            <p>06 juin → 07 juillet 2024</p>
+          </div>
+          <div class="meta-item">
+            <label>Avec</label>
+            <p>Les Armoires Pleines<br>6Mettre · Lycée Chérioux</p>
+          </div>
+        </div>
+        <div class="tags">
+          <span class="tag">Sérigraphie</span>
+          <span class="tag">Print</span>
+          <span class="tag">Typographie</span>
+          <span class="tag">Collectif</span>
+          <span class="tag">Exposition</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- L'AFFICHE -->
+    
+      <div class="affiche-texte">
+        <h2 class="affiche-heading">Affiche<br>de l'exposition</h2>
+        <p class="affiche-body">
+          Le design s'est construit autour d'une typographie massive condensed sur fond bleu électrique — 
+          une couleur qui évoque à la fois le ciel, la vitre du bus et l'asphalte mouillé.
+        </p>
+        <p class="affiche-body">
+          La ligne blanche serpentant à travers la composition figure le tracé de la Valouette, 
+          fil conducteur du projet. Les images intégrées sont des sérigraphies en bichromie.
+        </p>
+        <div class="affiche-detail-grid">
+          <div><label>Technique</label><p>Sérigraphie 2 couleurs</p></div>
+          <div><label>Format</label><p>A2 / B1</p></div>
+          <div><label>Typographie</label><p>Barlow Condensed Black</p></div>
+          <div><label>Palette</label><p>Bleu #3BA8D8 · Noir</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAROUSEL FEUILLET -->
+    <p class="projet__section-titre">Le feuillet</p>
+    <div class="carousel">
+      <button class="carousel__btn carousel__btn--prev" id="prev" aria-label="Précédent">&#10094;</button>
+      
+      <div class="carousel__viewport">
+        <div class="carousel__track" id="track">
+          <div class="carousel__item">
+            <img src="img/devantaffiche.webp" alt="Feuillet recto">
+            <span class="carousel__num">01</span>
+            <span class="carousel__nom">Recto — Présentation de l'exposition</span>
+          </div>
+          <div class="carousel__item">
+            <img src="img/dosaffiche.webp" alt="Feuillet verso">
+            <span class="carousel__num">02</span>
+            <span class="carousel__nom">Verso — Textes & crédits de l'équipe</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel__btn carousel__btn--next" id="next" aria-label="Suivant">&#10095;</button>
+    </div>
+    <div class="carousel__dots" id="dots"></div>
+
+
+  </section>
+
+  <!-- BANDE EXPOSITION -->
+  <div class="projet">
+    <div class="expo-bande">
+      <div class="expo-bande__inner">
+        <h2 class="expo-bande__titre">L'exposition<br>in situ</h2>
+        <div class="expo-grid">
+          <img src="img/expo-vue-01.webp" alt="Vue de l'exposition">
+          <img src="img/expo-vue-02.webp" alt="Détail affiches">
+          <img src="img/expo-vue-03.webp" alt="Détail feuillet">
+        </div>
+      </div>
+    </div>
+
+    <div class="projet-footer">
+      <p class="projet-footer__titre">Une Ligne<br>et des Âmes</p>
+      <a href="portfolio.html" class="projet-footer__back">Retour aux projets</a>
+    </div>
+  </div>
+
+  <!-- FOOTER injecté dynamiquement -->
+  <div id="footer-container"></div>
+    <script src="js/nav.js"></script>
+    <script src="js/uneligne.js"></script>
+
+</body>
+</html>

@@ -29,7 +29,7 @@ document.getElementById('footer-container').innerHTML = `
             <div class="footer__droite">
                 <h4>Suivez moi !</h4>
                 <div class="footer__reseaux">
-                    <div class="footer__rond"><img src="img/insram.webp" alt="Instagram"></div>
+                    <div class="footer__rond"><img src="img/instagram.webp" alt="Instagram"></div>
                     <div class="footer__rond">
                         <a href="https://www.linkedin.com/in/lana-gilbart-lagy27061401" target="_blank">
                             <img src="img/linkedin.webp" alt="LinkedIn">

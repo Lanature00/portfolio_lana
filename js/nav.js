@@ -1,6 +1,6 @@
 document.getElementById('nav-container').innerHTML = `
     <nav class="nav">
-        <span class="nav__logo">MON PORTFOLIO</span>
+        <span class="nav__logo">LANA GILBART</span>
         <button class="nav__burger" id="burger">
             <span></span>
             <span></span>

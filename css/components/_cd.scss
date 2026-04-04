@@ -1,0 +1,107 @@
+// Variables spécifiques au projet CD
+$cd-blue: #1a6fc4;
+$cd-cream: #f5f0e8;
+$cd-border: rgba(0, 0, 0, 0.1);
+
+#portfolio-project-cd {
+    
+    // Grille d'images personnalisée
+    .cd-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 24px;
+        margin-bottom: 80px;
+
+        &__item {
+            position: relative;
+            img {
+                width: 100%;
+                border-radius: 8px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // Workflow
+    .cd-workflow-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-bottom: 60px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    .cd-step {
+        &__num { font-family: monospace; color: $cd-blue; font-size: 0.8rem; }
+        &__title { font-size: 1.5rem; margin: 10px 0; }
+        &__body { font-size: 0.95rem; color: #666; line-height: 1.6; }
+    }
+
+    // Tracklist (Style épuré)
+    .cd-tracklist {
+        list-style: none;
+        padding: 0;
+        
+        .cd-track {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid $cd-border;
+            transition: all 0.3s ease;
+
+            &__num { width: 30px; color: #aaa; font-family: monospace; }
+            &__name { flex: 1; font-weight: 500; }
+            &__dur { color: #888; font-family: monospace; }
+
+            &:hover {
+                padding-left: 10px;
+                color: $cd-blue;
+            }
+        }
+    }
+
+    // Palette & Specs
+    .cd-specs-grid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+    }
+
+    .cd-palette {
+        display: flex;
+        gap: 10px;
+        .cd-swatch {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+    }
+
+    .cd-barcode {
+        font-family: monospace;
+        letter-spacing: 4px;
+        color: #ccc;
+    }
+
+    // Animations (le JS ajoutera .is-visible)
+    .cd-animate {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+
+        &.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

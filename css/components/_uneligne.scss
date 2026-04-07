@@ -34,10 +34,10 @@
   /* INTRO */
   .projet__hero {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 390px 1fr;
     gap: 56px;
     align-items: stretch;
-    padding: 72px 0 80px;
+    padding: 100px 0 80px;
     border-bottom: 1px solid #d9d9d9;
   }
 
@@ -232,4 +232,26 @@
       grid-template-columns: 1fr;
     }
   }
+.bloc-affiche {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.affiche-double {
+  display: grid;
+  grid-template-columns: repeat(2, 280px);
+  gap: 28px;
+  justify-content: start;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.affiche-double__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #d9d9d9;
+}
 }

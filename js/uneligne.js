@@ -1,4 +1,3 @@
-// uneligne.js - Carousel moderne
 (function () {
   'use strict';
 
@@ -11,50 +10,83 @@
 
   const items = track.querySelectorAll('.carousel__item');
   const total = items.length;
+  const gap = 24;
   let visible = 3;
   let idx = 0;
 
-  function updateVisibleCount() {
-    if (window.innerWidth < 768) visible = 1;
-    else if (window.innerWidth < 1024) visible = 2;
-    else visible = 3;
+  function getVisible() {
+    if (window.innerWidth <= 768) return 1;
+    if (window.innerWidth <= 1024) return 2;
+    return 3;
   }
 
-  // Création des dots
-  dotsEl.innerHTML = '';
-  for (let i = 0; i <= Math.max(0, total - visible); i++) {
-    const dot = document.createElement('button');
-    dot.classList.add('carousel__dot');
-    if (i === 0) dot.classList.add('actif');
-    dot.addEventListener('click', () => goTo(i));
-    dotsEl.appendChild(dot);
+  function getMaxIndex() {
+    return Math.max(0, total - visible);
   }
-  const dots = dotsEl.querySelectorAll('.carousel__dot');
 
-  function goTo(n) {
-    idx = Math.max(0, Math.min(n, total - visible));
-    const itemWidth = items[0].offsetWidth + 24;
-    track.style.transform = `translateX(-${idx * itemWidth}px)`;
+  function createDots() {
+    dotsEl.innerHTML = '';
 
-    dots.forEach((d, i) => {
-      d.classList.toggle('actif', i === idx);
+    for (let i = 0; i <= getMaxIndex(); i++) {
+      const dot = document.createElement('button');
+      dot.classList.add('carousel__dot');
+
+      if (i === idx) {
+        dot.classList.add('actif');
+      }
+
+      dot.addEventListener('click', () => {
+        goTo(i);
+      });
+
+      dotsEl.appendChild(dot);
+    }
+  }
+
+  function updateDots() {
+    const dots = dotsEl.querySelectorAll('.carousel__dot');
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('actif', i === idx);
     });
   }
 
+  function goTo(n) {
+    idx = Math.max(0, Math.min(n, getMaxIndex()));
+
+    const itemWidth = items[0].offsetWidth + gap;
+    track.style.transform = `translateX(-${idx * itemWidth}px)`;
+
+    updateDots();
+  }
+
+  function updateCarousel() {
+    visible = getVisible();
+
+    if (idx > getMaxIndex()) {
+      idx = getMaxIndex();
+    }
+
+    createDots();
+    goTo(idx);
+  }
+
   next.addEventListener('click', () => {
-    goTo(idx + 1 > total - visible ? 0 : idx + 1);
+    if (idx >= getMaxIndex()) {
+      goTo(0);
+    } else {
+      goTo(idx + 1);
+    }
   });
 
   prev.addEventListener('click', () => {
-    goTo(idx - 1 < 0 ? total - visible : idx - 1);
+    if (idx <= 0) {
+      goTo(getMaxIndex());
+    } else {
+      goTo(idx - 1);
+    }
   });
 
-  window.addEventListener('resize', () => {
-    updateVisibleCount();
-    goTo(idx);
-  });
+  window.addEventListener('resize', updateCarousel);
 
-  // Initialisation
-  updateVisibleCount();
-  goTo(0);
+  updateCarousel();
 })();

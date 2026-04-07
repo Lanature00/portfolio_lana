@@ -10,94 +10,73 @@
 
   <div id="nav-container"></div>
 
-  <!-- HERO PLEIN ÉCRAN -->
   <header class="projet-hero-full">
-    <img src="img/Posters_Mockup.webp" 
-         alt="Mockup Une Ligne et des Âmes" 
-         class="projet-hero-full__img">
+    <img
+      src="img/Posters_Mockup.webp"
+      alt="Mockup Une Ligne et des Âmes"
+      class="projet-hero-full__img"
+    >
   </header>
 
   <section class="projet">
 
-    <!-- INTRO -->
+    <!-- IMAGE À GAUCHE / TEXTE À DROITE -->
     <div class="projet__hero">
-
-      <!-- Colonne gauche : titre + image expo -->
-      <div class="projet__hero-contenu">
-        <p class="projet__categorie">Graphisme · Sérigraphie · Exposition</p>
-        <h1 class="projet__titre">Une Ligne<br><em>et des Âmes</em></h1>
-        <div class="projet__hero-img">
-          <img src="img/expo.webp" alt="Vue de l'exposition in situ">
-        </div>
+      <div class="projet__hero-img">
+        <img src="img/expo.webp" alt="Vue de l'exposition in situ">
       </div>
 
-      <!-- Colonne droite : description + méta + tags -->
       <div class="projet__meta">
+        <p class="projet__categorie">Graphisme · Sérigraphie · Exposition</p>
+
+        <h1 class="projet__titre">
+          Une Ligne<br><em>et des Âmes</em>
+        </h1>
+
         <p class="projet__desc">
-          Conception de l'identité graphique et impression sérigraphique de l'exposition collective 
-          <em>Une Ligne et des Âmes</em> — affiche, feuillet et supports — réalisés avec la compagnie 
+          Conception de l'identité graphique et impression sérigraphique de l'exposition
+          <em>Une Ligne et des Âmes</em> affiche, feuillet et supports réalisés avec la compagnie
           Les Armoires Pleines à partir d'un trajet photographique sur la Valouette.
         </p>
+
         <div class="meta-grid">
           <div class="meta-item">
             <label>Année</label>
             <p>2024</p>
           </div>
+
           <div class="meta-item">
             <label>Lieu</label>
             <p>Écomusée Grand-Orly<br>Fresnes (94)</p>
           </div>
+
           <div class="meta-item">
             <label>Dates</label>
             <p>06 juin → 07 juillet 2024</p>
           </div>
+
           <div class="meta-item">
             <label>Avec</label>
             <p>Les Armoires Pleines<br>6Mettre · Lycée Chérioux</p>
           </div>
         </div>
-        <div class="tags">
-          <span class="tag">Sérigraphie</span>
-          <span class="tag">Print</span>
-          <span class="tag">Typographie</span>
-          <span class="tag">Collectif</span>
-          <span class="tag">Exposition</span>
-        </div>
-      </div>
-
     </div>
 
-    <!-- CAROUSEL FEUILLET -->
+    <!-- AFFICHE SIMPLE -->
     <p class="projet__section-titre">L'affiche</p>
-    <div class="carousel">
-      <button class="carousel__btn carousel__btn--prev" id="prev" aria-label="Précédent">&#10094;</button>
-      
-      <div class="carousel__viewport">
-        <div class="carousel__track" id="track">
-          <div class="carousel__item">
-            <img src="img/devantaffiche.webp" alt="Feuillet recto">
-            <span class="carousel__num">01</span>
-            <span class="carousel__nom">Recto — Date et informations de l'exposition</span>
-          </div>
-          <div class="carousel__item">
-            <img src="img/dosaffiche.webp" alt="Feuillet verso">
-            <span class="carousel__num">02</span>
-            <span class="carousel__nom">Verso — Présentation de l'exposition</span>
-          </div>
-        </div>
-      </div>
 
-      <button class="carousel__btn carousel__btn--next" id="next" aria-label="Suivant">&#10095;</button>
+    <div class="affiche-simple">
+      <img src="img/devantaffiche.webp" alt="Affiche de l'exposition">
+      <img src="img/dosaffiche.webp" alt="Affiche de l'exposition">
     </div>
-    <div class="carousel__dots" id="dots"></div>
 
   </section>
 
-  <!-- BANDE EXPOSITION -->
-  <div class="projet">
+  <section class="projet">
     <div class="expo-bande">
       <div class="expo-bande__inner">
         <h2 class="expo-bande__titre">L'exposition<br>in situ</h2>
+
         <div class="expo-grid">
           <img src="img/expo-vue-01.webp" alt="Vue de l'exposition">
           <img src="img/expo-vue-02.webp" alt="Détail affiches">
@@ -105,16 +84,10 @@
         </div>
       </div>
     </div>
-
-    <div class="projet-footer">
-      <p class="projet-footer__titre">Une Ligne<br>et des Âmes</p>
-      <a href="portfolio.html" class="projet-footer__back">Retour aux projets</a>
-    </div>
-  </div>
+  </section>
 
   <div id="footer-container"></div>
-  <script src="js/nav.js"></script>
-  <script src="js/uneligne.js"></script>
 
+  <script src="js/nav.js"></script>
 </body>
 </html>

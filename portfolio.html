@@ -21,7 +21,6 @@
                 <button class="portfolio__filtre" data-filtre="illustration">Illustration</button>
                 <button class="portfolio__filtre" data-filtre="wordpress">WordPress</button>
                 <button class="portfolio__filtre" data-filtre="workshop">Workshop</button>
-
             </div>
         </div>
 
@@ -53,8 +52,21 @@
                 <p class="portfolio__carte-cat">Workshop</p>
             </a>
 
-            <a href="cd.html" class="portfolio__carte" data-categorie="graphisme"></a>
-            <div class="portfolio__carte" data-categorie="graphisme">
+            <div class="portfolio__carte" data-categorie="web">
+                <img
+                    src="img/fuji.webp"
+                    srcset="img/projet4-small.webp 400w, img/fuji.webp 800w"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    alt="Illustration">
+                <div class="portfolio__carte-info">
+                    <span class="portfolio__carte-nom">Fuji 3D</span>
+                    <span class="portfolio__carte-annee">2025</span>
+                </div>
+                <p class="portfolio__carte-cat">Modélisation 3D</p>
+            </div>
+
+            <!-- ✅ CORRIGÉ : l'ancien <a> vide + <div> séparés sont fusionnés en un seul <a> -->
+            <a href="cd.html" class="portfolio__carte" data-categorie="graphisme">
                 <img
                     src="img/cd.webp"
                     srcset="img/projet3-small.webp 400w, img/cd.webp 800w"
@@ -65,7 +77,7 @@
                     <span class="portfolio__carte-annee">2025</span>
                 </div>
                 <p class="portfolio__carte-cat">Graphisme</p>
-            </div>
+            </a>
 
             <div class="portfolio__carte" data-categorie="illustration">
                 <img

@@ -50,8 +50,15 @@
         }
     }
 
-    &__btn {
+    &__buttons {
+        display: flex;
+        gap: 16px;
         margin-top: 28px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__btn {
         padding: 10px 24px;
         border: 1.5px solid #fff;
         border-radius: 50px;
@@ -61,10 +68,22 @@
         font-family: "Space Mono", monospace;
         text-transform: uppercase;
         letter-spacing: 1.5px;
+        transition: all 0.3s ease;
 
         &:hover {
             background: #fff;
             color: #000;
+            transform: translateY(-2px);
+        }
+
+        &--cv {
+            border-color: #fff;
+            
+            &:hover {
+                background: transparent;
+                border-color: #fff;
+                transform: translateY(-2px);
+            }
         }
     }
 }
@@ -74,14 +93,14 @@
     min-height: 100vh;
     padding: 0 80px;
 
-      &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 120px;
-    max-width: calc(700px * 2 + 80px);   /* ✅ suit la largeur des grands écrans */
-    margin: 0 auto;
-}
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 120px;
+        max-width: calc(700px * 2 + 80px);
+        margin: 0 auto;
+    }
 
     &__titre {
         font-size: clamp(1.5rem, 4vw, 2.8rem);
@@ -100,20 +119,25 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: 500;
+        transition: all 0.3s ease;
 
         span {
             font-size: 18px;
             transition: transform 0.25s;
         }
 
-        &:hover span {
-            transform: translateX(6px);
+        &:hover {
+            transform: translateY(-2px);
+
+            span {
+                transform: translateX(6px);
+            }
         }
     }
 
-        &__projets {
+    &__projets {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 600px));  /* ✅ s'adapte à l'écran */
+        grid-template-columns: repeat(2, minmax(0, 600px));
         gap: 60px;
         padding-top: 40px;
         padding-bottom: 100px;
@@ -124,8 +148,8 @@
     &__carte {
         position: relative;
         cursor: pointer;
-        text-decoration: none;   /* ✅ pour le lien <a> */
-        display: block;          /* ✅ pour le lien <a> */
+        text-decoration: none;
+        display: block;
 
         img {
             width: 100%;
@@ -176,7 +200,7 @@
         }
     }
 
-      @media (max-width: 768px) {
+    @media (max-width: 768px) {
         padding: 0 24px;
 
         &__top {
@@ -189,7 +213,7 @@
         }
 
         &__projets {
-            grid-template-columns: 1fr;   /* ✅ une colonne sur mobile */
+            grid-template-columns: 1fr;
             gap: 40px;
         }
 
@@ -201,17 +225,17 @@
     }
 
     @media (min-width: 1200px) {
-    &__projets {
-        grid-template-columns: repeat(2, minmax(0, 700px));
-        gap: 80px;
-    }
+        &__projets {
+            grid-template-columns: repeat(2, minmax(0, 700px));
+            gap: 80px;
+        }
 
-    &__carte img {
-        height: 480px;
-    }
+        &__carte img {
+            height: 480px;
+        }
 
-    &__carte__voile {
-        height: 480px;
+        &__carte__voile {
+            height: 480px;
+        }
     }
-}
 }

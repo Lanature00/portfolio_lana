@@ -38,7 +38,7 @@
     gap: 56px;
     align-items: stretch;
     padding: 100px 0 80px;
-    border-bottom: 1px solid #d9d9d9;
+    border-bottom: none;
   }
 
   .projet__hero-img {
@@ -93,6 +93,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #d9d9d9;
   }
 
   .meta-item {
@@ -112,44 +114,47 @@
     }
   }
 
-  /* TITRE SECTION */
-  .projet__section-titre {
-    margin: 0;
-    padding: 56px 0 24px;
+  /* AFFICHES AVEC TITRE ET TRAIT */
+  .affiche-container {
+    padding: 0;
     display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #888;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
 
-    &::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: #d9d9d9;
+    &__titre {
+      margin: 0;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #888;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #d9d9d9;
+      align-self: flex-start;
+      width: 100%;
     }
   }
 
-  /* AFFICHES CÔTE À CÔTE */
+  /* AFFICHES CÔTE À CÔTE - AGRANDIES */
   .affiche-simple {
     display: grid;
-    grid-template-columns: repeat(2, 220px);
-    gap: 24px;
-    justify-content: start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 900px;
 
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 1px solid #d9d9d9;
+    &__item {
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid #d9d9d9;
+      }
     }
   }
 
   /* BANDE EXPO */
   .expo-bande {
-    margin-top: 24px;
+    margin-top: 100px;
     padding: 72px 32px;
 
     &__inner {
@@ -197,7 +202,7 @@
       grid-template-columns: 1fr;
       gap: 32px;
       align-items: start;
-      padding: 48px 0 56px;
+      padding: 48px 0 0;
     }
 
     .projet__hero-img {
@@ -211,19 +216,36 @@
       width: 100%;
       height: auto;
     }
+
+    .affiche-simple {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 100%;
+    }
+
+    .meta-grid {
+      padding-bottom: 30px;
+    }
   }
 
   @media (max-width: 768px) {
     .affiche-simple {
-      grid-template-columns: 220px;
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
 
     .expo-bande {
       padding: 48px 20px;
+      margin-top: 60px;
     }
 
     .expo-grid {
       grid-template-columns: 1fr;
+    }
+
+    .affiche-container {
+      gap: 16px;
+      margin-top: 30px;
     }
   }
 
@@ -232,26 +254,4 @@
       grid-template-columns: 1fr;
     }
   }
-.bloc-affiche {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-}
-
-.affiche-double {
-  display: grid;
-  grid-template-columns: repeat(2, 280px);
-  gap: 28px;
-  justify-content: start;
-  align-items: start;
-  margin-top: 24px;
-}
-
-.affiche-double__item img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid #d9d9d9;
-}
 }

@@ -17,13 +17,14 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     width: max-content;
     max-width: calc(100vw - 48px);
-    white-space: normal;
+    line-height: 1.6;
 
     @media (max-width: 768px) {
         top: 70px;
-        font-size: 0.64rem;
-        padding: 10px 14px;
-        max-width: calc(100vw - 80px);
+        font-size: 0.78rem;
+        padding: 12px 18px;
+        border-radius: 20px;
+        width: auto;
     }
 }
 

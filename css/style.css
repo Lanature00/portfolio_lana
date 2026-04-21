@@ -1033,6 +1033,9 @@ body {
   color: #c47c5a;
   opacity: 0.6;
 }
+.contact__input[type=email] {
+  width: 260px;
+}
 .contact__btn {
   padding: 16px 32px;
   border: 1.5px solid #222;
@@ -1104,6 +1107,9 @@ body {
   .contact__input {
     font-size: 1.2rem;
     width: 130px;
+  }
+  .contact__input[type=email] {
+    width: 190px;
   }
 }
 

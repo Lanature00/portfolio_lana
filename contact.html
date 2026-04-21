@@ -22,22 +22,24 @@
             <div class="contact__gauche">
                 <span class="contact__label">Complétez la phrase ci-dessous</span>
 
-                <form id="contact-form" class="contact__form">
+                <form
+                    class="contact__form"
+                    action="https://formspree.io/f/xlgapjrd"
+                    method="POST"
+                >
                     <p class="contact__phrase">
                         Je m'appelle
-                        <input type="text" class="contact__input" id="prenom" name="prenom" placeholder="votre prénom" required>
+                        <input type="text" class="contact__input" name="prenom" placeholder="votre prénom" required>
                         , et j'aimerais collaborer sur un projet de
-                        <input type="text" class="contact__input" id="projet" name="projet" placeholder="type de projet" required>
+                        <input type="text" class="contact__input" name="projet" placeholder="type de projet" required>
                         . Mon adresse email est
-                        <input type="email" class="contact__input" id="email" name="email" placeholder="email@exemple.com" required>
+                        <input type="email" class="contact__input" name="email" placeholder="email@exemple.com" required>
                         .
                     </p>
 
                     <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
-                    <input type="hidden" name="_replyto" id="replyto-hidden">
 
-                    <button type="submit" class="contact__btn" id="envoyer">Envoyer le message</button>
-                    <p class="contact__confirm" id="confirm"></p>
+                    <button type="submit" class="contact__btn">Envoyer le message</button>
                 </form>
             </div>
 
@@ -63,6 +65,5 @@
     <div id="footer-container"></div>
 
     <script src="js/nav.js"></script>
-    <script src="js/contact.js"></script>
 </body>
 </html>

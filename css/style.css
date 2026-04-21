@@ -1013,16 +1013,6 @@ body {
   background: #222;
   color: #fff;
 }
-.contact__btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-.contact__confirm {
-  margin-top: 16px;
-  font-size: 0.9rem;
-  color: #888;
-  font-style: italic;
-}
 .contact__card {
   background: rgba(0, 0, 0, 0.04);
   border-radius: 12px;

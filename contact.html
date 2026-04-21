@@ -8,9 +8,13 @@
 </head>
 <body>
 
+    <div class="contact__success" id="contact-success">
+        Merci, votre message a bien été envoyé ! Je vous répondrai dans les meilleurs délais.
+    </div>
+
     <div id="nav-container"></div>
 
-    <section class="contact">
+    <section class="contact" id="contact">
 
         <div class="contact__haut">
             <span class="contact__tag">Contact</span>
@@ -22,7 +26,7 @@
             <div class="contact__gauche">
                 <span class="contact__label">Complétez la phrase ci-dessous</span>
 
-                <form class="contact__form" action="https://formsubmit.co/lanagilbart@gmail.com" method="POST">
+                <form class="contact__form" id="contact-form" action="https://formsubmit.co/ajax/lanagilbart@gmail.com" method="POST">
                     <p class="contact__phrase">
                         Je m'appelle
                         <input
@@ -52,7 +56,6 @@
                     </p>
 
                     <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
-                    <input type="hidden" name="_next" value="https://lanature00.github.io/portfolio_lana/index.html">
                     <input type="hidden" name="_captcha" value="false">
 
                     <button type="submit" class="contact__btn">Envoyer le message</button>
@@ -81,5 +84,6 @@
     <div id="footer-container"></div>
 
     <script src="js/nav.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>

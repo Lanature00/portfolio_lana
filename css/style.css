@@ -955,8 +955,9 @@ body {
 @media (max-width: 768px) {
   .contact__success {
     top: 70px;
-    font-size: 0.8rem;
-    padding: 12px 18px;
+    font-size: 0.72rem;
+    padding: 10px 14px;
+    max-width: calc(100vw - 80px);
   }
 }
 

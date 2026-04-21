@@ -1007,7 +1007,7 @@ body {
   letter-spacing: 2px;
   color: #222;
   cursor: pointer;
-  transition: background 0.25s, color 0.25s, opacity 0.25s;
+  transition: background 0.25s, color 0.25s;
 }
 .contact__btn:hover {
   background: #222;

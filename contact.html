@@ -21,17 +21,24 @@
 
             <div class="contact__gauche">
                 <span class="contact__label">Complétez la phrase ci-dessous</span>
-                <p class="contact__phrase">
-                    Je m'appelle
-                    <input type="text" class="contact__input" id="prenom" placeholder="votre prénom">
-                    , et j'aimerais collaborer sur un projet de
-                    <input type="text" class="contact__input" id="projet" placeholder="type de projet">
-                    . Mon adresse email est
-                    <input type="text" class="contact__input" id="email" placeholder="email@exemple.com">
-                    .
-                </p>
-                <button class="contact__btn" id="envoyer">Envoyer le message</button>
-                <p class="contact__confirm" id="confirm"></p>
+
+                <form id="contact-form" class="contact__form">
+                    <p class="contact__phrase">
+                        Je m'appelle
+                        <input type="text" class="contact__input" id="prenom" name="prenom" placeholder="votre prénom" required>
+                        , et j'aimerais collaborer sur un projet de
+                        <input type="text" class="contact__input" id="projet" name="projet" placeholder="type de projet" required>
+                        . Mon adresse email est
+                        <input type="email" class="contact__input" id="email" name="email" placeholder="email@exemple.com" required>
+                        .
+                    </p>
+
+                    <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+                    <input type="hidden" name="_replyto" id="replyto-hidden">
+
+                    <button type="submit" class="contact__btn" id="envoyer">Envoyer le message</button>
+                    <p class="contact__confirm" id="confirm"></p>
+                </form>
             </div>
 
             <div class="contact__droite">
@@ -54,8 +61,8 @@
     </section>
 
     <div id="footer-container"></div>
+
     <script src="js/nav.js"></script>
     <script src="js/contact.js"></script>
-
 </body>
 </html>

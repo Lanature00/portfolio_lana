@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formes d'Amis — Installation Interactive</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <div id="nav-container"></div>
+
+  <!-- COVER — IMAGE PLEIN ÉCRAN -->
+  <header class="fda-cover">
+    <img src="img/fda1.jpg" alt="Formes d'Amis — Installation Interactive" class="fda-cover__img">
+  </header>
+
+  <main class="fda-main">
+
+    <!-- INTRO ÉDITORIALE -->
+    <section class="fda-editorial">
+      <p class="fda-editorial__categorie">Interactivité · Installation · WebRTC</p>
+
+      <h1 class="fda-editorial__titre">Formes<br><em>d'Amis</em></h1>
+
+      <p class="fda-editorial__desc">
+        Une expérience interactive live conçue en <strong>4 jours</strong> pour les Journées Portes Ouvertes
+        de GOBELINS Paris. Deux caméras placées dans deux salles distinctes capturent les mouvements
+        des participants et les transforment en formes géométriques animées transmises à l'autre salle
+        comme un appel vidéo drôle et anonyme.
+      </p>
+
+      <div class="fda-editorial__meta">
+        <div class="fda-editorial__meta-item">
+          <span class="fda-editorial__meta-label">Année</span>
+          <span class="fda-editorial__meta-value">2025</span>
+        </div>
+        <div class="fda-editorial__meta-item">
+          <span class="fda-editorial__meta-label">Contexte</span>
+          <span class="fda-editorial__meta-value">Journées Portes Ouvertes<br>GOBELINS Paris</span>
+        </div>
+        <div class="fda-editorial__meta-item">
+          <span class="fda-editorial__meta-label">Durée</span>
+          <span class="fda-editorial__meta-value">4 jours</span>
+        </div>
+        <div class="fda-editorial__meta-item">
+          <span class="fda-editorial__meta-label">Avec</span>
+          <span class="fda-editorial__meta-value">
+            Maëlys Paoletti<br>
+            Corentin Flaud<br>
+            Nohlan Pieroni<br>
+            Lana Gilbart
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FONCTIONNEMENT -->
+    <section class="fda-concept">
+      <p class="fda-section-label">Fonctionnement</p>
+
+      <div class="fda-concept__grid">
+        <div class="fda-concept__card">
+          <div class="fda-concept__icon"></div>
+          <h3>Deux caméras</h3>
+          <p>Deux salles distinctes. Chaque caméra capture les mouvements des participants en temps réel.</p>
+        </div>
+        <div class="fda-concept__card fda-concept__card--accent">
+          <div class="fda-concept__icon"></div>
+          <h3>Transformation</h3>
+          <p>La détection de posture transforme chaque personne en une forme géométrique animée et colorée.</p>
+        </div>
+        <div class="fda-concept__card">
+          <div class="fda-concept__icon"></div>
+          <h3>Connexion distante</h3>
+          <p>Le flux vidéo altéré est transmis à l'autre salle comme un appel vidéo — drôle et anonyme.</p>
+        </div>
+      </div>
+
+      <div class="fda-tech__list">
+        <div class="fda-tech__item">
+          <span class="fda-tech__dot fda-tech__dot--webrtc"></span>
+          <div>
+            <strong>WebRTC</strong>
+            <p>Communication distante en temps réel entre les deux salles</p>
+          </div>
+        </div>
+        <div class="fda-tech__item">
+          <span class="fda-tech__dot fda-tech__dot--mediapipe"></span>
+          <div>
+            <strong>Mediapipe</strong>
+            <p>Détection de la posture corporelle frame par frame</p>
+          </div>
+        </div>
+        <div class="fda-tech__item">
+          <span class="fda-tech__dot fda-tech__dot--p5"></span>
+          <div>
+            <strong>p5.js</strong>
+            <p>Rendu graphique des formes animées en canvas</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCUMENTATION -->
+    <section class="fda-gallery">
+      <p class="fda-section-label">Documentation</p>
+
+      <div class="fda-gallery__grid">
+        <div class="fda-gallery__item fda-gallery__item--big">
+          <img src="img/fda1.jpg" alt="Participant interagissant avec l'installation">
+          <div class="fda-gallery__overlay"><span>Live demo</span></div>
+        </div>
+        <div class="fda-gallery__item">
+          <img src="img/fda2.jpg" alt="Formes animées sur écran">
+          <div class="fda-gallery__overlay"><span>Formes</span></div>
+        </div>
+        <div class="fda-gallery__item">
+          <img src="img/fda3.jpg" alt="Groupe interagissant">
+          <div class="fda-gallery__overlay"><span>Interaction</span></div>
+        </div>
+        <div class="fda-gallery__item">
+          <img src="img/fda4.jpg" alt="Setup technique">
+          <div class="fda-gallery__overlay"><span>Setup</span></div>
+        </div>
+        <div class="fda-gallery__item fda-gallery__item--wide">
+          <img src="img/fda5.jpg" alt="Projection étoile jaune">
+          <div class="fda-gallery__overlay"><span>Projection</span></div>
+        </div>
+        <div class="fda-gallery__item">
+          <img src="img/fda6.jpg" alt="Soleil bleu sur écran">
+          <div class="fda-gallery__overlay"><span>Personnage</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MON RÔLE -->
+    <section class="fda-myrole">
+      <p class="fda-section-label">Mon rôle</p>
+      <div class="fda-myrole__content">
+        <div class="fda-myrole__text">
+          <h2>Design &amp; Canvas</h2>
+          <p>
+           Je me suis occupé du canvas et css du projets afin de crée les bras et les jambes des personnages je me suis aussi occupés d'assembler les bras et les jambes à la forme ainsi que de leur viasage et j'ai fait en sorte que les visages et les formes apparaissent aléatoirement  
+          </p>
+          <p>
+            <strong>strong>, 
+          </p>
+        </div>
+        <div class="fda-myrole__tags">
+          <span>Direction artistique</span>
+          <span>p5.js canvas</span>
+          <span>CSS</span>
+          <span>Figma</span>
+          <span>Exploration visuelle</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer-container"></div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/formedamis.js"></script>
+</body>
+</html>

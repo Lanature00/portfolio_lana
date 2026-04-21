@@ -34,6 +34,10 @@
         align-items: start;
     }
 
+    &__form {
+        margin: 0;
+    }
+
     &__label {
         font-size: 0.75rem;
         text-transform: uppercase;
@@ -77,11 +81,16 @@
         letter-spacing: 2px;
         color: #222;
         cursor: pointer;
-        transition: background 0.25s, color 0.25s;
+        transition: background 0.25s, color 0.25s, opacity 0.25s;
 
         &:hover {
             background: #222;
             color: #fff;
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
     }
 
@@ -93,7 +102,7 @@
     }
 
     &__card {
-        background: rgba(0,0,0,0.04);
+        background: rgba(0, 0, 0, 0.04);
         border-radius: 12px;
         padding: 24px;
         margin-bottom: 40px;
@@ -150,6 +159,7 @@
 
         &__phrase {
             font-size: 1.2rem;
+            line-height: 2;
         }
 
         &__input {

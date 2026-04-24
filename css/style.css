@@ -145,9 +145,20 @@ body {
   letter-spacing: 4px;
   margin-bottom: 12px;
 }
+@media (max-width: 768px) {
+  .header__content h1 {
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+  }
+}
 .header__content p {
   font-size: 1.1rem;
   letter-spacing: 2px;
+}
+@media (max-width: 768px) {
+  .header__content p {
+    font-size: 0.9rem;
+  }
 }
 .header__buttons {
   display: flex;
@@ -175,11 +186,6 @@ body {
 }
 .header__btn--cv {
   border-color: #fff;
-}
-.header__btn--cv:hover {
-  background: transparent;
-  border-color: #fff;
-  transform: translateY(-2px);
 }
 
 .travaux {
@@ -633,7 +639,7 @@ body {
   padding: 120px 80px 100px;
 }
 .portfolio__top {
-  max-width: 1500px; /* ✅ suit la largeur des grands écrans */
+  max-width: 1500px;
   margin: 0 auto;
   margin-bottom: 60px;
 }
@@ -672,7 +678,7 @@ body {
 }
 .portfolio__grille {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 600px)); /* ✅ s'adapte */
+  grid-template-columns: repeat(2, minmax(0, 600px));
   gap: 60px 80px;
   align-items: start;
   justify-content: center;
@@ -681,8 +687,8 @@ body {
 .portfolio__carte {
   cursor: pointer;
   position: relative;
-  text-decoration: none; /* ✅ pour le lien <a> */
-  display: block; /* ✅ pour le lien <a> */
+  text-decoration: none;
+  display: block;
 }
 .portfolio__carte:nth-child(even) {
   margin-top: 100px;
@@ -694,10 +700,21 @@ body {
      object-fit: cover;
   border-radius: 8px;
   display: block;
+}
+.portfolio__carte::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 380px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
   transition: opacity 0.3s;
 }
-.portfolio__carte:hover img {
-  opacity: 0.85;
+.portfolio__carte:hover::after {
+  opacity: 1;
 }
 .portfolio__carte-info {
   display: flex;
@@ -746,6 +763,9 @@ body {
     gap: 80px 100px;
   }
   .portfolio__carte img {
+    height: 480px;
+  }
+  .portfolio__carte::after {
     height: 480px;
   }
 }
@@ -2068,7 +2088,7 @@ body {
   -o-object-position: center;
      object-position: center;
   display: block;
-  filter: grayscale(1);
+  /* ✅ filter: grayscale(1) supprimé */
 }
 
 .fda-main {
@@ -2241,7 +2261,6 @@ body {
 .fda-concept__icon {
   font-size: 2rem;
   margin-bottom: 1rem;
-  filter: grayscale(1);
   color: #000000;
 }
 
@@ -2336,7 +2355,7 @@ body {
      object-fit: cover;
   display: block;
   transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  filter: grayscale(1);
+  /* ✅ filter: grayscale(1) supprimé */
 }
 .fda-gallery__item:hover img {
   transform: scale(1.06);

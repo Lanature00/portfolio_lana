@@ -4,98 +4,44 @@
    ============================================================ */
 
 /* ============================================================
-   HERO
+   VISIONNEUSE 3D — HERO PLEIN ÉCRAN (premier élément de page)
    ============================================================ */
 
-.p-appareil__hero-full {
+.p-appareil__viewer-hero-section {
     width: 100%;
-    height: 100vh;
-    min-height: 520px;
-    position: relative;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    overflow: hidden;
-}
-
-.p-appareil__hero-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-}
-
-.p-appareil__hero-content {
-    position: relative;
-    z-index: 2;
-    padding: 0 80px 80px;
-}
-
-@media (max-width: 768px) {
-    .p-appareil__hero-content {
-        padding: 0 24px 60px;
-    }
-}
-
-.p-appareil__hero-annee {
-    display: block;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-bottom: 20px;
-}
-
-.p-appareil__hero-titre {
-    font-size: clamp(4rem, 10vw, 9rem);
-    font-weight: 700;
-    line-height: 0.95;
-    margin: 0 0 28px;
-}
-
-.p-appareil__hero-titre em {
-    font-style: italic;
-    font-weight: 400;
-}
-
-.p-appareil__hero-sous-titre {
-    font-size: 0.9rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.p-appareil__hero-scroll {
-    position: absolute;
-    bottom: 40px;
-    right: 80px;
+    /* Prend toute la hauteur de la fenêtre moins la nav.
+       Ajuste --nav-height selon la hauteur réelle de ta nav (ex: 60px, 72px…) */
+    height: calc(100vh - var(--nav-height, 64px));
+    min-height: 480px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    z-index: 2;
+    position: relative;
 }
 
-.p-appareil__hero-scroll span {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    writing-mode: vertical-lr;
+/* Dans le contexte hero, le wrapper occupe tout l'espace disponible */
+.p-appareil__viewer-hero-section .p-appareil__viewer-wrapper {
+    flex: 1;
+    height: auto;       /* override la hauteur fixe du viewer standard */
+    border-radius: 0;   /* plein bord dans le hero */
+    border: none;
+    margin-bottom: 0;
+}
+
+/* Footer upload : discret, sous le viewer */
+.p-appareil__viewer-hero-section .p-appareil__viewer-footer {
+    padding: 12px 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 @media (max-width: 768px) {
-    .p-appareil__hero-scroll {
-        display: none;
+    .p-appareil__viewer-hero-section {
+        height: calc(100vh - var(--nav-height, 56px));
+        min-height: 360px;
     }
-}
 
-.p-appareil__hero-scroll-line {
-    width: 1px;
-    height: 60px;
-    animation: scrollLine 2s ease-in-out infinite;
-}
-
-@keyframes scrollLine {
-    0%, 100% { transform: scaleY(1); opacity: 1; }
-    50%       { transform: scaleY(0.4); opacity: 0.4; }
+    .p-appareil__viewer-hero-section .p-appareil__viewer-footer {
+        padding: 10px 20px;
+    }
 }
 
 /* ============================================================
@@ -199,7 +145,7 @@
 }
 
 /* ============================================================
-   VISIONNEUSE 3D
+   VISIONNEUSE 3D (styles de base, utilisés hors-hero aussi)
    ============================================================ */
 
 .p-appareil__viewer-section {

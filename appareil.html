@@ -23,18 +23,34 @@
     <!-- NAV -->
     <div id="nav-container"></div>
 
-    <!-- ========== HERO PLEINE PAGE ========== -->
-    <header class="p-appareil__hero-full">
-        <div class="p-appareil__hero-bg"></div>
-        <div class="p-appareil__hero-content">
-            <span class="p-appareil__hero-annee">Workshop · Décembre 2025</span>
-            <h1 class="p-appareil__hero-titre">Appareil<br><em>Photo</em></h1>
-            <p class="p-appareil__hero-sous-titre">Modélisation 3D · Vue éclatée · Blender</p>
+    <!-- ========== VISIONNEUSE 3D — HERO PLEIN ÉCRAN ========== -->
+    <section class="p-appareil__viewer-hero-section">
+        <div class="p-appareil__viewer-wrapper">
+            <div class="p-appareil__viewer-canvas" id="viewer3d">
+                <div class="p-appareil__viewer-loading" id="viewer-loading">
+                    <div class="p-appareil__loader"></div>
+                </div>
+            </div>
+            <div class="p-appareil__viewer-hint" id="viewer-hint">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0v10M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0v8"/>
+                    <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
+                </svg>
+                <span>Glisser pour faire pivoter · Molette pour zoomer</span>
+            </div>
         </div>
-        <div class="p-appareil__hero-scroll">
-            <div class="p-appareil__hero-scroll-line"></div>
+
+        <!-- Bouton upload discret sous le viewer -->
+        <div class="p-appareil__viewer-footer">
+            <p class="p-appareil__viewer-note">
+                Glisser pour faire pivoter · Molette pour zoomer
+            </p>
+            <label class="p-appareil__upload-btn" for="glb-upload">
+                Charger un fichier .glb
+                <input type="file" id="glb-upload" accept=".glb,.gltf" style="display:none">
+            </label>
         </div>
-    </header>
+    </section>
 
     <!-- ========== CONTENU PRINCIPAL ========== -->
     <main class="p-appareil">
@@ -54,7 +70,8 @@
                         structure interne et ses composants.
                     </p>
                     <p class="p-appareil__desc">
-                        J'ai choisi un appareil photo analogique qui une structure technique et une esthétique vintage 
+                        J'ai choisi un appareil photo analogique pour sa structure technique et son esthétique vintage.
+                    </p>
                 </div>
                 <div class="p-appareil__intro-meta">
                     <div class="p-appareil__meta-item">
@@ -77,45 +94,6 @@
             </div>
         </section>
 
-        <!-- ========== VISIONNEUSE 3D INTERACTIVE ========== -->
-        <section class="p-appareil__viewer-section">
-            <p class="p-appareil__section-titre">Modèle 3D interactif</p>
-
-            <!--
-                STRUCTURE IMPORTANTE :
-                .p-appareil__viewer-wrapper  → hauteur fixe 600px, position: relative
-                    .p-appareil__viewer-canvas  → position: absolute; inset: 0
-                        (Three.js injecte son <canvas> ici)
-                    .p-appareil__viewer-hint    → position: absolute, en bas
-                    .p-appareil__viewer-controls → position: absolute, en haut à droite
-            -->
-            <div class="p-appareil__viewer-wrapper">
-                <div class="p-appareil__viewer-canvas" id="viewer3d">
-                    <div class="p-appareil__viewer-loading" id="viewer-loading">
-                        <div class="p-appareil__loader"></div>
-                    </div>
-                </div>
-                <div class="p-appareil__viewer-hint" id="viewer-hint">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0v10M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0v8"/>
-                        <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
-                    </svg>
-                    <span>Glisser pour faire pivoter · Molette pour zoomer</span>
-                </div>
-
-            </div>
-
-            <div class="p-appareil__viewer-footer">
-                <p class="p-appareil__viewer-note">
-                   Glisser pour faire pivoter · Molette pour zoomer
-                </p>
-                <label class="p-appareil__upload-btn" for="glb-upload">
-                    
-                    <input type="file" id="glb-upload" accept=".glb,.gltf" style="display:none">
-                </label>
-            </div>
-        </section>
-
         <!-- ========== VIDÉO ========== -->
         <section class="p-appareil__video-section">
             <p class="p-appareil__section-titre">Animation éclatée</p>
@@ -125,7 +103,6 @@
                     id="projet-video"
                     preload="metadata"
                     poster="img/appareil-poster.webp">
-                    <!-- Remplace par le chemin de ta vidéo -->
                     <source src="img/appareil-eclate.mp4" type="video/mp4">
                     <source src="img/appareil-eclate.webm" type="video/webm">
                     Votre navigateur ne supporte pas la lecture vidéo.
@@ -150,7 +127,6 @@
                 
                 <div class="p-appareil__carousel-viewport">
                     <div class="p-appareil__carousel-track" id="track">
-                        <!-- Remplace les src par tes vrais rendus Blender -->
                         <div class="p-appareil__carousel-item">
                             <img src="img/rendu-01.webp" alt="Rendu face avant">
                             <span class="p-appareil__carousel-num">01</span>

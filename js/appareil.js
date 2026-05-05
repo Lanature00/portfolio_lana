@@ -5,8 +5,7 @@
  * Fonctionnalités :
  *  - Chargement GLB via Three.js (OrbitControls pour rotation/zoom souris & tactile)
  *  - Bouton upload pour charger un .glb depuis le disque
- *  - Tentative de chargement automatique depuis models/appareil.glb
- *  - Bouton reset caméra + toggle auto-rotation
+ *  - Tentative de chargement automatique depuis img/appareil.glb
  *  - Carousel de rendus
  *  - Bouton play vidéo
  */
@@ -21,15 +20,22 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
    ============================================================ */
 
 (function initViewer() {
-    const container  = document.getElementById('viewer3d');
-    const loadingEl  = document.getElementById('viewer-loading');
-    const hintEl     = document.getElementById('viewer-hint');
+    const container   = document.getElementById('viewer3d');
+    const loadingEl   = document.getElementById('viewer-loading');
+    const hintEl      = document.getElementById('viewer-hint');
     const uploadInput = document.getElementById('glb-upload');
 
     if (!container) return;
 
-    /* Le wrapper est le parent avec hauteur fixe — on l'observe pour le resize */
-    const wrapper = container.closest('.p-appareil__viewer-wrapper') || container;
+    /*
+     * Le wrapper est le parent avec hauteur calculée (hero plein écran).
+     * On cherche d'abord .p-appareil__viewer-hero-section puis le wrapper
+     * standard en fallback.
+     */
+    const wrapper =
+        container.closest('.p-appareil__viewer-wrapper') ||
+        container.closest('.p-appareil__viewer-hero-section') ||
+        container;
 
     /* ---- Scène Three.js ---- */
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -37,8 +43,8 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
     renderer.setSize(wrapper.clientWidth, wrapper.clientHeight);
     renderer.domElement.style.display = 'block';
     renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.shadowMap.enabled = false; // désactivé pour éviter l'assombrissement
-    renderer.toneMapping = THREE.NoToneMapping; // pas de tone mapping qui écrase les couleurs
+    renderer.shadowMap.enabled = false;
+    renderer.toneMapping = THREE.NoToneMapping;
     renderer.toneMappingExposure = 1;
     container.appendChild(renderer.domElement);
 
@@ -54,7 +60,7 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
     );
     camera.position.set(0, 0.5, 4);
 
-    /* ---- Lumières — très généreux pour compenser l'absence de HDR ---- */
+    /* ---- Lumières ---- */
     const ambient = new THREE.AmbientLight(0xffffff, 1.5);
     scene.add(ambient);
 
@@ -71,21 +77,26 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
     scene.add(rimLight);
 
     /* ---- OrbitControls ---- */
-    /* On passe le wrapper comme élément d'écoute — il couvre toute la zone
-       et n'est pas bloqué par les éléments positionnés en absolute par-dessus */
-    const controls = new OrbitControls(camera, wrapper);
-    controls.enableDamping    = true;
-    controls.dampingFactor    = 0.06;
-    controls.minDistance      = 0.5;
-    controls.maxDistance      = 12;
-    controls.autoRotate       = true;
-    controls.autoRotateSpeed  = 0.8;
-    controls.enablePan        = false;
+    /*
+     * On attache les controls au wrapper .p-appareil__viewer-wrapper
+     * pour que toute la zone soit interactive, y compris sur mobile.
+     */
+    const controlsTarget =
+        container.closest('.p-appareil__viewer-wrapper') || wrapper;
 
-    /* S'assurer que le canvas ne bloque pas les events vers le wrapper */
+    const controls = new OrbitControls(camera, controlsTarget);
+    controls.enableDamping   = true;
+    controls.dampingFactor   = 0.06;
+    controls.minDistance     = 0.5;
+    controls.maxDistance     = 12;
+    controls.autoRotate      = true;
+    controls.autoRotateSpeed = 0.8;
+    controls.enablePan       = false;
+
+    /* Le canvas ne doit pas capturer les events (le wrapper le fait) */
     renderer.domElement.style.pointerEvents = 'none';
 
-    /* Cacher le hint après la première interaction */
+    /* Masquer le hint après la première interaction */
     let hintHidden = false;
     controls.addEventListener('start', () => {
         if (!hintHidden) {
@@ -101,21 +112,17 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
     const loader = new GLTFLoader();
     loader.setDRACOLoader(dracoLoader);
 
-    /* Position caméra par défaut sauvegardée pour le reset */
-    const defaultCameraPos    = camera.position.clone();
-    const defaultCameraTarget = new THREE.Vector3(0, 0, 0);
-
     let currentModel = null;
 
-    /* ---- Fonction de chargement GLB ---- */
+    /* ---- Chargement GLB ---- */
     function loadGLB(url) {
         if (loadingEl) {
             loadingEl.style.opacity = '1';
             loadingEl.style.pointerEvents = 'auto';
             loadingEl.classList.remove('hidden');
+            loadingEl.style.display = '';
         }
 
-        /* Supprimer l'ancien modèle s'il y en a un */
         if (currentModel) {
             scene.remove(currentModel);
             currentModel = null;
@@ -126,7 +133,7 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
             (gltf) => {
                 const model = gltf.scene;
 
-                /* Centrer et scaler le modèle automatiquement */
+                /* Centrer et scaler automatiquement */
                 const box    = new THREE.Box3().setFromObject(model);
                 const size   = box.getSize(new THREE.Vector3());
                 const center = box.getCenter(new THREE.Vector3());
@@ -136,7 +143,6 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
                 model.scale.setScalar(scale);
                 model.position.sub(center.multiplyScalar(scale));
 
-                /* Ombres */
                 model.traverse((child) => {
                     if (child.isMesh) {
                         child.castShadow    = true;
@@ -152,19 +158,17 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
                 controls.target.set(0, 0, 0);
                 controls.update();
 
-                /* Masquer le loader complètement */
+                /* Masquer le loader */
                 if (loadingEl) {
                     loadingEl.classList.add('hidden');
                     loadingEl.style.display = 'none';
                 }
 
-                /* Libérer l'URL objet si c'est un blob */
                 if (url.startsWith('blob:')) URL.revokeObjectURL(url);
             },
             (xhr) => {
-                /* Progress optionnel */
                 if (xhr.total) {
-                    const pct = Math.round((xhr.loaded / xhr.total) * 100);
+                    const pct  = Math.round((xhr.loaded / xhr.total) * 100);
                     const span = loadingEl?.querySelector('span');
                     if (span) span.textContent = `Chargement… ${pct}%`;
                 }
@@ -181,7 +185,7 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
         );
     }
 
-    /* Chargement automatique depuis models/appareil.glb */
+    /* Chargement automatique — fichier placé dans img/appareil.glb */
     loadGLB('img/appareil.glb');
 
     /* ---- Upload manuel ---- */
@@ -189,8 +193,7 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
         uploadInput.addEventListener('change', (e) => {
             const file = e.target.files[0];
             if (!file) return;
-            const url = URL.createObjectURL(file);
-            loadGLB(url);
+            loadGLB(URL.createObjectURL(file));
         });
     }
 
@@ -258,7 +261,6 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
     const items = Array.from(track.querySelectorAll('.p-appareil__carousel-item'));
     if (items.length === 0) return;
 
-    /* Déterminer le nombre d'items visibles selon la largeur */
     function getVisible() {
         const w = window.innerWidth;
         if (w <= 600)  return 1;
@@ -270,7 +272,6 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
     let visible  = getVisible();
     let maxIndex = Math.max(0, items.length - visible);
 
-    /* Créer les dots */
     function buildDots() {
         dotsWrap.innerHTML = '';
         const count = maxIndex + 1;
@@ -300,7 +301,6 @@ import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
 
-    /* Recalcul au resize */
     window.addEventListener('resize', () => {
         visible  = getVisible();
         maxIndex = Math.max(0, items.length - visible);

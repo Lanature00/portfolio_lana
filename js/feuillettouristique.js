@@ -1,59 +1,67 @@
-const track = document.getElementById('track');
-const viewport = track.parentElement;
-const prev = document.getElementById('prev');
-const next = document.getElementById('next');
-const dotsEl = document.getElementById('dots');
+(function initCarousel() {
+    const track    = document.getElementById('track');
+    const prevBtn  = document.getElementById('prev');
+    const nextBtn  = document.getElementById('next');
+    const dotsWrap = document.getElementById('dots');
 
-const items = track.querySelectorAll('.carousel__item');
-const total = items.length;
-let idx = 0;
+    if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
 
-function getVisible() {
-    if (window.innerWidth <= 768) return 1;
-    if (window.innerWidth <= 1024) return 2;
-    return 3;
-}
+    const items = Array.from(track.querySelectorAll('.carousel__item'));
+    if (items.length === 0) return;
 
-function buildDots() {
-    dotsEl.innerHTML = '';
-    const visible = getVisible();
-    const count = total - visible;
-
-    for (let i = 0; i <= count; i++) {
-        const dot = document.createElement('button');
-        dot.classList.add('carousel__dot');
-        if (i === 0) dot.classList.add('actif');
-        dot.addEventListener('click', () => goTo(i));
-        dotsEl.appendChild(dot);
+    function getVisible() {
+        const w = window.innerWidth;
+        if (w <= 768)  return 1;
+        if (w <= 1024) return 2;
+        return 3;
     }
-}
 
-function getDots() {
-    return dotsEl.querySelectorAll('.carousel__dot');
-}
+    let current  = 0;
+    let visible  = getVisible();
+    let maxIndex = Math.max(0, items.length - visible);
 
-function goTo(n) {
-    const visible = getVisible();
-    idx = Math.max(0, Math.min(n, total - visible));
-    const itemWidth = items[0].offsetWidth + 24;
-    track.style.transform = `translateX(-${idx * itemWidth}px)`;
-    getDots().forEach((d, i) => d.classList.toggle('actif', i === idx));
-}
+    function buildDots() {
+        dotsWrap.innerHTML = '';
+        const count = maxIndex + 1;
+        for (let i = 0; i < count; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'carousel__dot' + (i === current ? ' actif' : '');
+            btn.setAttribute('aria-label', `Page ${i + 1}`);
+            btn.addEventListener('click', () => goTo(i));
+            dotsWrap.appendChild(btn);
+        }
+    }
 
-next.addEventListener('click', () => {
-    const visible = getVisible();
-    goTo(idx + 1 > total - visible ? 0 : idx + 1);
-});
+    function updateDots() {
+        dotsWrap.querySelectorAll('.carousel__dot')
+            .forEach((d, i) => d.classList.toggle('actif', i === current));
+    }
 
-prev.addEventListener('click', () => {
-    const visible = getVisible();
-    goTo(idx - 1 < 0 ? total - visible : idx - 1);
-});
+    function goTo(index) {
+        current = Math.max(0, Math.min(index, maxIndex));
 
-window.addEventListener('resize', () => {
+        // Recalcule à chaque appel pour tenir compte du resize
+        const gap       = 24;
+        const itemWidth = items[0].offsetWidth + gap;
+        track.style.transform = `translateX(-${current * itemWidth}px)`;
+
+        updateDots();
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === maxIndex;
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    window.addEventListener('resize', () => {
+        visible  = getVisible();
+        maxIndex = Math.max(0, items.length - visible);
+        current  = Math.min(current, maxIndex);
+        buildDots();
+        goTo(current);
+    });
+
+    // Init : buildDots PUIS goTo(0) — ordre important
     buildDots();
     goTo(0);
-});
-
-// Init
-buildDots();
+})();

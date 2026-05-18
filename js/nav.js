@@ -15,6 +15,7 @@ document.getElementById('nav-container').innerHTML = `
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+    <div class="breadcrumb" id="breadcrumb"></div>
 `;
 
 document.getElementById('footer-container').innerHTML = `
@@ -49,6 +50,7 @@ document.getElementById('footer-container').innerHTML = `
     </footer>
 `;
 
+// Menu burger
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 burger.addEventListener('click', () => {

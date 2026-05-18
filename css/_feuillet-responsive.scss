@@ -1,0 +1,174 @@
+/* ==================== FEUILLET TOURISTIQUE — RESPONSIVE FIX ==================== */
+
+/* Résout le problème de découpage du contenu sur mobile */
+
+.projet-hero-full {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.projet-hero-full__img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+}
+
+.projet {
+  padding: 60px 24px;
+  max-width: 100%;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.projet__hero-contenu {
+  padding: 0;
+}
+
+.projet__titre {
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.projet__desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* CAROUSEL RESPONSIVE */
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+.carousel__track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel__item {
+  flex: 0 0 calc((100% - 32px) / 2);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.carousel__item img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.carousel__btn {
+  background: none;
+  border: 2px solid #222;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  font-size: 1rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.carousel__btn:hover {
+  background: #222;
+  color: white;
+}
+
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel__dot.actif {
+  background: #222;
+  transform: scale(1.2);
+}
+
+/* MOBILE : 1 item visible */
+@media (max-width: 480px) {
+  .carousel {
+    gap: 8px;
+  }
+
+  .carousel__item {
+    flex: 0 0 calc(100% - 16px);
+  }
+
+  .carousel__btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 0.9rem;
+  }
+
+  .projet {
+    padding: 40px 16px;
+  }
+
+  .projet__titre {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .projet__desc {
+    font-size: 0.95rem;
+  }
+}
+
+/* Empêcher le scroll horizontal */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+main,
+section,
+.projet,
+.carousel {
+  max-width: 100%;
+  overflow-x: hidden;
+}

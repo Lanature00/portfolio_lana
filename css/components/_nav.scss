@@ -119,33 +119,50 @@
     }
 
     &__link {
-        color: #888;
+        color: rgba(255, 255, 255, 0.75);
         text-decoration: none;
         transition: color 0.2s;
 
         &:hover {
-            color: #627e68;
+            color: #fff;
         }
     }
 
     &__sep {
-        color: #bbb;
+        color: rgba(255, 255, 255, 0.4);
         font-size: 10px;
         user-select: none;
     }
 
     &__current {
-        color: #222;
+        color: #fff;
         font-weight: 700;
     }
 }
 
-// Conteneur du fil d'ariane — positionné juste sous la nav fixe
+// Fil d'ariane : flotte AU-DESSUS du contenu, collé sous la nav
+// Aucun padding/margin ne pousse le contenu — il overlay l'image hero
 #breadcrumb-container {
-    padding: 90px 48px 0;   // 68px (hauteur nav) + 22px de marge
-    background: #fff;
+    position: fixed;
+    top: 64px;         // hauteur de la nav desktop
+    left: 0;
+    right: 0;
+    z-index: 90;       // sous la nav (100) mais au-dessus du reste
+    padding: 10px 48px;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.35) 0%,
+        rgba(0, 0, 0, 0.0) 100%
+    );
+    pointer-events: none; // le fond ne bloque pas les clics…
+
+    // …mais les liens restent cliquables
+    a, button, ol, li, span {
+        pointer-events: auto;
+    }
 
     @media (max-width: 768px) {
-        padding: 76px 24px 0;
+        top: 57px;       // hauteur de la nav mobile
+        padding: 10px 24px;
     }
 }

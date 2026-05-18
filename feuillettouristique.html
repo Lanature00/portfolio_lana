@@ -3,117 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Livret Touristique — Lana Gilbart</title>
+    <title>Livret Touristique</title>
     <link rel="stylesheet" href="css/style.css">
-
-    <style>
-        /* ── Corrections responsive — feuilletouristique ──────────────────── */
-
-        /* Empêche tout débordement horizontal */
-        html, body {
-            overflow-x: hidden;
-            max-width: 100%;
-        }
-
-        /* Texte principal : ne dépasse jamais le viewport */
-        .projet {
-            box-sizing: border-box;
-            width: 100%;
-            max-width: 100%;
-        }
-
-        /* Carousel : le viewport coupe le track qui dépasse */
-        .carousel {
-            box-sizing: border-box;
-            width: 100%;
-            min-width: 0;
-        }
-
-        .carousel__viewport {
-            overflow: hidden;
-            flex: 1;
-            min-width: 0; /* empêche le dépassement dans un flex parent */
-        }
-
-        .carousel__track {
-            display: flex;
-            gap: 24px;
-            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            will-change: transform;
-        }
-
-        /* Items : taille fluide selon le nombre visible */
-        .carousel__item {
-            flex: 0 0 calc((100% - 48px) / 3);
-            min-width: 0;
-            box-sizing: border-box;
-        }
-
-        .carousel__item img {
-            width: 100%;
-            display: block;
-            max-width: 100%;
-        }
-
-        /* ── Mobile ≤ 768px ─────────────────────────────────────────────── */
-        @media (max-width: 768px) {
-
-            /* Réduction des paddings pour ne pas sortir de l'écran */
-            .projet {
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-            }
-
-            /* Titre adaptatif */
-            .projet__titre {
-                font-size: clamp(2rem, 10vw, 3.2rem) !important;
-                word-break: break-word;
-            }
-
-            .projet__desc {
-                font-size: 1rem;
-                max-width: 100%;
-            }
-
-            .projet__categorie {
-                font-size: 0.7rem;
-            }
-
-            /* Carousel : 1 item plein écran, boutons plus petits */
-            .carousel {
-                gap: 10px !important;
-            }
-
-            .carousel__item {
-                flex: 0 0 100% !important;
-            }
-
-            .carousel__btn {
-                width: 36px !important;
-                height: 36px !important;
-                font-size: 0.85rem !important;
-                flex-shrink: 0;
-            }
-        }
-
-        /* ── Tablette ≤ 1024px ──────────────────────────────────────────── */
-        @media (max-width: 1024px) and (min-width: 769px) {
-            .carousel__item {
-                flex: 0 0 calc((100% - 24px) / 2) !important;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <!-- NAV -->
     <div id="nav-container"></div>
-    <div id="breadcrumb-container"></div>
 
     <!-- HERO -->
     <header class="projet-hero-full">
-        <img src="img/Espagne.webp"
-             alt="Livret Touristique"
+        <img src="img/Espagne.webp" 
+             alt="Livret Touristique" 
              class="projet-hero-full__img"
              loading="eager">
     </header>
@@ -126,7 +27,7 @@
                 <p class="projet__categorie">Graphisme · Édition · Print</p>
                 <h1 class="projet__titre">Livret<br>de <em>voyage</em></h1>
                 <p class="projet__desc">
-                    Conception graphique complète d'un livret de voyage mise en page, choix typographiques,
+                    Conception graphique complète d'un livret de voyage mise en page, choix typographiques, 
                     traitement photographique et narration visuelle répartis sur 8 pages.
                 </p>
             </div>
@@ -137,7 +38,7 @@
 
         <div class="carousel">
             <button class="carousel__btn carousel__btn--prev" id="prev" aria-label="Précédent">&#10094;</button>
-
+            
             <div class="carousel__viewport">
                 <div class="carousel__track" id="track">
                     <div class="carousel__item">

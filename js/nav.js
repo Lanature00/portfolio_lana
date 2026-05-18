@@ -15,7 +15,6 @@ document.getElementById('nav-container').innerHTML = `
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <div class="breadcrumb" id="breadcrumb"></div>
 `;
 
 document.getElementById('footer-container').innerHTML = `
@@ -62,17 +61,17 @@ burger.addEventListener('click', () => {
 
 // Pages principales — fil : Accueil / Page
 const PAGE_LABELS = {
-    'portfolio.html' : 'Portfolio',
-    'apropos.html'   : 'À propos',
-    'contact.html'   : 'Contact',
+    'portfolio.html'         : 'Portfolio',
+    'apropos.html'           : 'À propos',
+    'contact.html'           : 'Contact',
 };
 
 // Pages projet — fil : Accueil / Portfolio / Projet
-// Ajoutez ici chaque page de cas projet.
 const PROJET_LABELS = {
-    'formedamis.html' : "Formes d'Amis",
-    // 'branding.html'  : 'Branding',
-    // 'motion.html'    : 'Motion Design',
+    'formedamis.html'        : "Formes d'Amis",
+    'feuilletouristique.html': 'Livret Touristique',
+    'appareil.html'          : 'Appareil Photo 3D',
+    'cd.html'      : 'Pochette CD',
 };
 
 function buildBreadcrumb() {

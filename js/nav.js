@@ -2,7 +2,7 @@
 
 document.getElementById('nav-container').innerHTML = `
     <nav class="nav">
-        <span class="nav__logo">LANA GILBART</span>
+        <a href="index.html" class="nav__logo">LANA GILBART</a>
         <button class="nav__burger" id="burger">
             <span></span>
             <span></span>
@@ -68,10 +68,11 @@ const PAGE_LABELS = {
 
 // Pages projet — fil : Accueil / Portfolio / Projet
 const PROJET_LABELS = {
-    'formedamis.html'        : "Formes d'Amis",
-    'feuilletouristique.html': 'Livret Touristique',
-    'appareil.html'          : 'Appareil Photo 3D',
-    'cd.html'      : 'Pochette CD',
+    'formedamis.html'           : "Formes d'Amis",
+    'feuillettouristique.html'  : 'Livret Touristique',
+    'appareil.html'             : 'Appareil Photo 3D',
+    'cd.html'                   : 'Pochette CD',
+    'uneligne.html'             : 'Une Ligne et des Âmes',
 };
 
 function buildBreadcrumb() {

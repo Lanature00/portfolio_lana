@@ -885,6 +885,7 @@ body {
   padding: 100px 80px;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%; /* Modification ajoutée pour sécuriser la largeur */
 }
 @media (max-width: 768px) {
   .projet {
@@ -919,7 +920,9 @@ body {
 }
 @media (max-width: 768px) {
   .projet__titre {
-    font-size: 3.2rem;
+    /* Modifications ajoutées pour rendre le texte fluide et empêcher le débordement */
+    font-size: clamp(2.5rem, 8vw, 3.2rem);
+    word-break: break-word;
   }
 }
 .projet__desc {

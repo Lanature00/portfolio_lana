@@ -51,7 +51,9 @@ document.getElementById('footer-container').innerHTML = `
                     </div>
 
                     <div class="footer__rond">
-                        <img src="img/githublogo.webp" alt="réseau 3">
+                        <a href="https://github.com/Lanature00" target="_blank">
+                            <img src="img/githublogo.png" alt="GitHub">
+                        </a>
                     </div>
 
                 </div>

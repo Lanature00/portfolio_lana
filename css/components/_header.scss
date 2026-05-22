@@ -62,9 +62,23 @@
     &__buttons {
         display: flex;
         gap: 16px;
-        margin-top: 28px;
+        margin-top: 24px; /* Espace propre sous le sous-titre "Développeur · Designer" */
         flex-wrap: wrap;
         justify-content: center;
+    }
+
+    &__description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        max-width: 580px;
+        margin: 32px auto 0; /* Espace harmonieux créé sous les boutons */
+        color: #2D3A30;
+
+        @media (max-width: 768px) {
+            font-size: 0.95rem;
+            padding: 0 24px;
+            margin-top: 24px;
+        }
     }
 
     &__btn {
@@ -85,7 +99,6 @@
             transform: translateY(-2px);
         }
 
-        // ✅ --cv a maintenant exactement le même hover que le bouton principal
         &--cv {
             border-color: #fff;
         }

@@ -222,9 +222,23 @@ body {
 .header__buttons {
   display: flex;
   gap: 16px;
-  margin-top: 28px;
+  margin-top: 24px; /* Espace propre sous le sous-titre "Développeur · Designer" */
   flex-wrap: wrap;
   justify-content: center;
+}
+.header__description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 580px;
+  margin: 32px auto 0; /* Espace harmonieux créé sous les boutons */
+  color: #2D3A30;
+}
+@media (max-width: 768px) {
+  .header__description {
+    font-size: 0.95rem;
+    padding: 0 24px;
+    margin-top: 24px;
+  }
 }
 .header__btn {
   padding: 10px 24px;
@@ -490,8 +504,8 @@ body {
 }
 
 .apropos {
-  min-height: 100vh;
-  padding: 120px 80px 80px;
+  min-height: 95vh;
+  padding: 120px 80px 20px;
 }
 .apropos__tag {
   font-size: 0.75rem;
@@ -503,13 +517,13 @@ body {
 }
 .apropos__contenu {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 40% 75%;
+  gap: 100px;
   align-items: start;
 }
 .apropos__gauche img {
   width: 100%;
-  height: 580px;
+  height: 620px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 8px;
@@ -519,7 +533,7 @@ body {
   padding-top: 20px;
 }
 .apropos__titre {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   font-weight: 700;
   color: #222;
   line-height: 1.15;
@@ -530,17 +544,17 @@ body {
   font-weight: 400;
 }
 .apropos__texte {
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: #444;
   line-height: 1.8;
-  margin-bottom: 36px;
+  margin-bottom: 16px;
   max-width: 580px;
 }
 .apropos__expertises {
   margin-bottom: 48px;
 }
 .apropos__expertises-titre {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #888;
@@ -553,10 +567,7 @@ body {
   gap: 10px;
 }
 .apropos__chip {
-  padding: 8px 18px;
-  border: 1.5px solid #222;
-  border-radius: 50px;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: #222;
   letter-spacing: 1px;
 }

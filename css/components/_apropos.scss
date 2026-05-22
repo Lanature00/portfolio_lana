@@ -1,6 +1,6 @@
 .apropos {
-    min-height: 100vh;
-    padding: 120px 80px 80px;
+    min-height: 95vh;
+    padding: 120px 80px 20px;
 
     &__tag {
         font-size: 0.75rem;
@@ -13,15 +13,15 @@
 
     &__contenu {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
+        grid-template-columns: 40% 75%;
+        gap: 100px;
         align-items: start;
     }
 
     &__gauche {
         img {
             width: 100%;
-            height: 580px;
+            height: 620px;
             object-fit: cover;
             border-radius: 8px;
             display: block;
@@ -33,7 +33,7 @@
     }
 
     &__titre {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
         font-weight: 700;
         color: #222;
         line-height: 1.15;
@@ -46,10 +46,10 @@
     }
 
     &__texte {
-        font-size: 1rem;
+        font-size: 1.15rem;
         color: #444;
         line-height: 1.8;
-        margin-bottom: 36px;
+        margin-bottom: 16px;
         max-width: 580px;
     }
 
@@ -58,7 +58,7 @@
     }
 
     &__expertises-titre {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         text-transform: uppercase;
         letter-spacing: 3px;
         color: #888;
@@ -73,10 +73,7 @@
     }
 
     &__chip {
-        padding: 8px 18px;
-        border: 1.5px solid #222;
-        border-radius: 50px;
-        font-size: 0.8rem;
+        font-size: 0.95rem;
         color: #222;
         letter-spacing: 1px;
     }

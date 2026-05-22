@@ -1144,20 +1144,20 @@ body {
 .contact__input {
   background: none;
   border: none;
-  border-bottom: 1.5px solid #c47c5a;
+  border-bottom: 1.5px solid #35593b;
   font-size: 1.6rem;
   font-style: italic;
-  color: #c47c5a;
+  color: #35593b;
   width: 180px;
   outline: none;
   padding: 0 4px;
 }
 .contact__input::-moz-placeholder {
-  color: #c47c5a;
+  color: #35593b;
   opacity: 0.6;
 }
 .contact__input::placeholder {
-  color: #c47c5a;
+  color: #35593b;
   opacity: 0.6;
 }
 .contact__input[type=email] {
@@ -1214,7 +1214,7 @@ body {
   transition: color 0.25s;
 }
 .contact__reseau:hover {
-  color: #c47c5a;
+  color: #35593b;
 }
 @media (max-width: 768px) {
   .contact {

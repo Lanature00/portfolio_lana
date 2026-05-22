@@ -91,16 +91,16 @@
     &__input {
         background: none;
         border: none;
-        border-bottom: 1.5px solid #c47c5a;
+        border-bottom: 1.5px solid #35593b;
         font-size: 1.6rem;
         font-style: italic;
-        color: #c47c5a;
+        color: #35593b;
         width: 180px;
         outline: none;
         padding: 0 4px;
 
         &::placeholder {
-            color: #c47c5a;
+            color: #35593b;
             opacity: 0.6;
         }
 
@@ -167,7 +167,7 @@
         transition: color 0.25s;
 
         &:hover {
-            color: #c47c5a;
+            color: #35593b;
         }
     }
 

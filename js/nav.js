@@ -40,19 +40,19 @@ document.getElementById('footer-container').innerHTML = `
 
                     <div class="footer__rond">
                         <a href="https://www.instagram.com/lanagilbart/" target="_blank">
-                            <img src="img/instagram.webp" alt="Instagram">
+                            <img src="img/nav/instagram.webp" alt="Instagram">
                         </a>
                     </div>
 
                     <div class="footer__rond">
                         <a href="https://www.linkedin.com/in/lana-gilbart-lagy27061401" target="_blank">
-                            <img src="img/linkedin.webp" alt="LinkedIn">
+                            <img src="img/nav/linkedin.webp" alt="LinkedIn">
                         </a>
                     </div>
 
                     <div class="footer__rond">
                         <a href="https://github.com/Lanature00" target="_blank">
-                            <img src="img/githublogo.png" alt="GitHub">
+                            <img src="img/nav/githublogo.png" alt="GitHub">
                         </a>
                     </div>
 

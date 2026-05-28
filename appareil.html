@@ -99,23 +99,14 @@
         <section class="p-appareil__video-section">
             <p class="p-appareil__section-titre">Animation éclatée</p>
             <div class="p-appareil__video-wrapper">
-                <video 
+                <iframe
                     class="p-appareil__video"
-                    id="projet-video"
-                    preload="metadata"
-                    poster="img/appareil-poster.webp">
-                    <source src="img/appareil/video_appareil.mp4" type="video/mp4">
-                    <source src="img/appareil/appareil.webm" type="video/webm">
-                    Votre navigateur ne supporte pas la lecture vidéo.
-                </video>
-                <div class="p-appareil__video-overlay" id="video-overlay">
-                    <button class="p-appareil__play-btn" id="play-btn" aria-label="Lire la vidéo">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                            <polygon points="5 3 19 12 5 21 5 3"/>
-                        </svg>
-                    </button>
-                    <span class="p-appareil__play-label">Vue éclatée animée</span>
-                </div>
+                    src="https://www.youtube.com/embed/wTNonMeYVa8?rel=0&modestbranding=1"
+                    title="Vue éclatée animée — Appareil photo"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
             </div>
         </section>
 

@@ -107,6 +107,14 @@
         &[type="email"] {
             width: 260px;
         }
+
+        &[name="entreprise"] {
+            width: 220px;
+        }
+
+        &[name="poste"] {
+            width: 200px;
+        }
     }
 
     &__btn {
@@ -194,6 +202,14 @@
 
             &[type="email"] {
                 width: 190px;
+            }
+
+            &[name="entreprise"] {
+                width: 160px;
+            }
+
+            &[name="poste"] {
+                width: 150px;
             }
         }
     }

@@ -9,7 +9,7 @@
 <body>
 
     <div class="contact__success" id="contact-success">
-        Merci, votre message a bien été envoyé !<br>Je vous répondrai dans les meilleurs délais.
+        Merci ! Je reviendrai vers vous rapidement pour discuter de l'opportunité.
     </div>
 
     <div id="nav-container"></div>
@@ -18,18 +18,18 @@
     <section class="contact" id="contact">
 
         <div class="contact__haut">
-            <span class="contact__tag">Contact</span>
-            <h1 class="contact__titre">Travaillons<br><em>ensemble</em></h1>
+            <span class="contact__tag">Alternance</span>
+            <h1 class="contact__titre">Vous recrutez<br><em>en alternance ?</em></h1>
         </div>
 
         <div class="contact__contenu">
 
             <div class="contact__gauche">
-                <span class="contact__label">Complétez la phrase ci-dessous</span>
+                <span class="contact__label">Dites-m'en plus sur votre entreprise</span>
 
                 <form class="contact__form" id="contact-form" action="https://formsubmit.co/ajax/lanagilbart@gmail.com" method="POST">
                     <p class="contact__phrase">
-                        Je m'appelle
+                        Bonjour Lana, je m'appelle
                         <input
                             type="text"
                             class="contact__input"
@@ -37,12 +37,20 @@
                             placeholder="(votre prénom)"
                             required
                         >
-                        , et j'aimerais collaborer sur un projet de
+                        , je travaille chez
                         <input
                             type="text"
                             class="contact__input"
-                            name="projet"
-                            placeholder="(type de projet)"
+                            name="entreprise"
+                            placeholder="(nom de l'entreprise)"
+                            required
+                        >
+                        et nous recherchons une alternante en
+                        <input
+                            type="text"
+                            class="contact__input"
+                            name="poste"
+                            placeholder="(ex : Dev Web)"
                             required
                         >
                         . Mon adresse email est
@@ -50,16 +58,15 @@
                             type="email"
                             class="contact__input"
                             name="email"
-                            placeholder="(mettez votre email)"
+                            placeholder="(votre email)"
                             required
                         >
-                        
                     </p>
 
-                    <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio">
+                    <input type="hidden" name="_subject" value="Candidature alternance depuis le portfolio">
                     <input type="hidden" name="_captcha" value="false">
 
-                    <button type="submit" class="contact__btn">Envoyer le message</button>
+                    <button type="submit" class="contact__btn">Envoyer ma proposition</button>
                 </form>
             </div>
 

@@ -145,7 +145,7 @@
     }
   }
 
-  /* GRILLE : AFFICHES + LIVRET (3 colonnes) */
+  
   .affiche-simple {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -153,11 +153,25 @@
     width: 100%;
 
     &__item {
+      aspect-ratio: 1 / 1.414;
+      overflow: hidden;
+      border: 1px solid #d9d9d9;
+      align-self: start;
+
       img {
         display: block;
         width: 100%;
-        height: auto;
-        border: 1px solid #d9d9d9;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      &:nth-child(3) {
+        aspect-ratio: 1 / 1.414;
+
+        img {
+          object-position: center center;
+        }
       }
     }
   }

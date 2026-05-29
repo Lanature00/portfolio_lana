@@ -1373,20 +1373,33 @@ body {
   align-self: flex-start;
   width: 100%;
 }
-.page-une-ligne {
-  /* GRILLE : AFFICHES + LIVRET (3 colonnes) */
-}
 .page-une-ligne .affiche-simple {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   width: 100%;
 }
+.page-une-ligne .affiche-simple__item {
+  aspect-ratio: 1/1.414;
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  align-self: start;
+}
 .page-une-ligne .affiche-simple__item img {
   display: block;
   width: 100%;
-  height: auto;
-  border: 1px solid #d9d9d9;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+}
+.page-une-ligne .affiche-simple__item:nth-child(3) {
+  aspect-ratio: 1/1.414;
+}
+.page-une-ligne .affiche-simple__item:nth-child(3) img {
+  -o-object-position: center center;
+     object-position: center center;
 }
 .page-une-ligne {
   /* BANDE EXPO */

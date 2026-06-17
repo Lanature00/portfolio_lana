@@ -896,7 +896,7 @@ body {
   padding: 100px 80px;
   max-width: 1400px;
   margin: 0 auto;
-  width: 100%; /* Modification ajoutée pour sécuriser la largeur */
+  width: 100%;
 }
 @media (max-width: 768px) {
   .projet {
@@ -931,7 +931,6 @@ body {
 }
 @media (max-width: 768px) {
   .projet__titre {
-    /* Modifications ajoutées pour rendre le texte fluide et empêcher le débordement */
     font-size: clamp(2.5rem, 8vw, 3.2rem);
     word-break: break-word;
   }
@@ -1021,9 +1020,22 @@ body {
   background: #222;
   color: white;
 }
+.carousel__btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+.carousel__btn:disabled:hover {
+  background: none;
+  color: inherit;
+}
+.carousel__btn {
+  /* Sur mobile : boutons plus petits pour ne pas écraser le viewport */
+}
 @media (max-width: 768px) {
   .carousel__btn {
-    display: none;
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
   }
 }
 .carousel__dots {

@@ -20,6 +20,22 @@
     let visible  = getVisible();
     let maxIndex = Math.max(0, items.length - visible);
 
+    /* ---- Navigation ---- */
+    function goTo(index) {
+        current = Math.max(0, Math.min(index, maxIndex));
+
+        // Calcul dynamique basé sur la largeur réelle de l'item + le gap CSS
+        const gap = 24; 
+        const itemWidth = items[0].offsetWidth + gap;
+        
+        track.style.transform = `translateX(-${current * itemWidth}px)`;
+
+        updateDots();
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === maxIndex;
+    }
+
+    /* ---- Dots ---- */
     function buildDots() {
         dotsWrap.innerHTML = '';
         const count = maxIndex + 1;
@@ -33,22 +49,11 @@
     }
 
     function updateDots() {
-        dotsWrap.querySelectorAll('.carousel__dot')
-            .forEach((d, i) => d.classList.toggle('actif', i === current));
+        const dots = dotsWrap.querySelectorAll('.carousel__dot');
+        dots.forEach((d, i) => d.classList.toggle('actif', i === current));
     }
 
-    function goTo(index) {
-        current = Math.max(0, Math.min(index, maxIndex));
-
-        const gap       = 24;
-        const itemWidth = items[0].offsetWidth + gap;
-        track.style.transform = `translateX(-${current * itemWidth}px)`;
-
-        updateDots();
-        prevBtn.disabled = current === 0;
-        nextBtn.disabled = current === maxIndex;
-    }
-
+    /* ---- Event Listeners ---- */
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
 
@@ -60,6 +65,7 @@
         goTo(current);
     });
 
+    /* ---- Init ---- */
     buildDots();
     goTo(0);
 })();

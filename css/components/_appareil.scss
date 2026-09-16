@@ -1,16 +1,5 @@
-/* ============================================================
-   APPAREIL PHOTO 3D — mise en page uniquement
-   Scopé à .p-appareil, compatible Live Sass Compiler
-   ============================================================ */
-
-/* ============================================================
-   VISIONNEUSE 3D — HERO PLEIN ÉCRAN (premier élément de page)
-   ============================================================ */
-
 .p-appareil__viewer-hero-section {
     width: 100%;
-    /* Prend toute la hauteur de la fenêtre moins la nav.
-       Ajuste --nav-height selon la hauteur réelle de ta nav (ex: 60px, 72px…) */
     height: calc(100vh - var(--nav-height, 64px));
     min-height: 480px;
     display: flex;
@@ -18,11 +7,11 @@
     position: relative;
 }
 
-/* Dans le contexte hero, le wrapper occupe tout l'espace disponible */
+
 .p-appareil__viewer-hero-section .p-appareil__viewer-wrapper {
     flex: 1;
-    height: auto;       /* override la hauteur fixe du viewer standard */
-    border-radius: 0;   /* plein bord dans le hero */
+    height: auto;       
+    border-radius: 0;   
     border: none;
     margin-bottom: 0;
 }
@@ -44,9 +33,6 @@
     }
 }
 
-/* ============================================================
-   TITRE DE SECTION (commun)
-   ============================================================ */
 
 .p-appareil__section-titre {
     font-size: 0.78rem;
@@ -57,9 +43,6 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* ============================================================
-   INTRO
-   ============================================================ */
 
 .p-appareil__intro {
     padding: 100px 80px;

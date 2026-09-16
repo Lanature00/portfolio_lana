@@ -1,13 +1,13 @@
-// ─── NAV & FOOTER ───────────────────────────────────────────────────────────
-
 document.getElementById('nav-container').innerHTML = `
     <nav class="nav">
         <a href="index.html" class="nav__logo">LANA GILBART</a>
-        <button class="nav__burger" id="burger">
+
+        <button class="nav__burger" id="burger" aria-label="Ouvrir le menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
+
         <ul class="nav__links" id="navLinks">
             <li><a href="index.html">Accueil</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
@@ -39,19 +39,31 @@ document.getElementById('footer-container').innerHTML = `
                 <div class="footer__reseaux">
 
                     <div class="footer__rond">
-                        <a href="https://www.instagram.com/lanagilbart/" target="_blank">
+                        <a
+                            href="https://www.instagram.com/lanagilbart/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <img src="img/nav/instagram.webp" alt="Instagram">
                         </a>
                     </div>
 
                     <div class="footer__rond">
-                        <a href="https://www.linkedin.com/in/lana-gilbart-lagy27061401" target="_blank">
+                        <a
+                            href="https://www.linkedin.com/in/lana-gilbart-lagy27061401"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <img src="img/nav/linkedin.webp" alt="LinkedIn">
                         </a>
                     </div>
 
                     <div class="footer__rond">
-                        <a href="https://github.com/Lanature00" target="_blank">
+                        <a
+                            href="https://github.com/Lanature00"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <img src="img/nav/githublogo.png" alt="GitHub">
                         </a>
                     </div>
@@ -70,37 +82,32 @@ document.getElementById('footer-container').innerHTML = `
     </footer>
 `;
 
-
-// ─── MENU BURGER ────────────────────────────────────────────────────────────
-
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 
-burger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-});
+if (burger && navLinks) {
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        burger.classList.toggle('active');
+    });
+}
 
-
-// ─── FIL D'ARIANE ───────────────────────────────────────────────────────────
-
-// Pages principales — fil : Accueil / Page
 const PAGE_LABELS = {
-    'portfolio.html' : 'Portfolio',
-    'apropos.html'   : 'À propos',
-    'contact.html'   : 'Contact',
+    'portfolio.html': 'Portfolio',
+    'apropos.html': 'À propos',
+    'contact.html': 'Contact',
+    'aubonheur.html': 'Au Bonheur'
 };
 
-// Pages projet — fil : Accueil / Portfolio / Projet
 const PROJET_LABELS = {
-    'formedamis.html'          : "Formes d'Amis",
-    'feuillettouristique.html' : 'Livret Touristique',
-    'appareil.html'            : 'Appareil Photo 3D',
-    'cd.html'                  : 'Pochette CD',
-    'uneligne.html'            : 'Une Ligne et des Âmes',
+    'formedamis.html': "Formes d'Amis",
+    'feuillettouristique.html': 'Livret Touristique',
+    'appareil.html': 'Appareil Photo 3D',
+    'cd.html': 'Pochette CD',
+    'uneligne.html': 'Une Ligne et des Âmes'
 };
 
 function buildBreadcrumb() {
-
     const container = document.getElementById('breadcrumb-container');
 
     if (!container) return;
@@ -110,150 +117,75 @@ function buildBreadcrumb() {
     const filename =
         path.substring(path.lastIndexOf('/') + 1) || 'index.html';
 
-    // Accueil : pas de fil d'ariane
     if (filename === 'index.html' || filename === '') {
-
         container.style.display = 'none';
-
         return;
     }
-
-    let html = '';
-
-    // ─── PAGES PROJET ───────────────────────────────────────────────────────
 
     if (PROJET_LABELS[filename]) {
-
-        html = `
+        container.innerHTML = `
             <nav class="breadcrumb" aria-label="Fil d'ariane">
+                <ol class="breadcrumb__list">
 
-                <ol class="breadcrumb__list"
-                    itemscope
-                    itemtype="https://schema.org/BreadcrumbList">
-
-                    <li class="breadcrumb__item"
-                        itemprop="itemListElement"
-                        itemscope
-                        itemtype="https://schema.org/ListItem">
-
-                        <a class="breadcrumb__link"
-                           href="index.html"
-                           itemprop="item">
-
-                            <span itemprop="name">Accueil</span>
-
+                    <li class="breadcrumb__item">
+                        <a class="breadcrumb__link" href="index.html">
+                            Accueil
                         </a>
-
-                        <meta itemprop="position" content="1" />
-
-                        <span class="breadcrumb__sep"
-                              aria-hidden="true">/</span>
-
+                        <span class="breadcrumb__sep">/</span>
                     </li>
 
-                    <li class="breadcrumb__item"
-                        itemprop="itemListElement"
-                        itemscope
-                        itemtype="https://schema.org/ListItem">
-
-                        <a class="breadcrumb__link"
-                           href="portfolio.html"
-                           itemprop="item">
-
-                            <span itemprop="name">Portfolio</span>
-
+                    <li class="breadcrumb__item">
+                        <a class="breadcrumb__link" href="portfolio.html">
+                            Portfolio
                         </a>
-
-                        <meta itemprop="position" content="2" />
-
-                        <span class="breadcrumb__sep"
-                              aria-hidden="true">/</span>
-
+                        <span class="breadcrumb__sep">/</span>
                     </li>
 
-                    <li class="breadcrumb__item breadcrumb__item--current"
-                        itemprop="itemListElement"
-                        itemscope
-                        itemtype="https://schema.org/ListItem"
-                        aria-current="page">
-
-                        <span class="breadcrumb__current"
-                              itemprop="name">
-
-                              ${PROJET_LABELS[filename]}
-
+                    <li
+                        class="breadcrumb__item breadcrumb__item--current"
+                        aria-current="page"
+                    >
+                        <span class="breadcrumb__current">
+                            ${PROJET_LABELS[filename]}
                         </span>
-
-                        <meta itemprop="position" content="3" />
-
                     </li>
 
                 </ol>
-
             </nav>
         `;
-
-    // ─── PAGES PRINCIPALES ─────────────────────────────────────────────────
-
-    } else if (PAGE_LABELS[filename]) {
-
-        html = `
-            <nav class="breadcrumb" aria-label="Fil d'ariane">
-
-                <ol class="breadcrumb__list"
-                    itemscope
-                    itemtype="https://schema.org/BreadcrumbList">
-
-                    <li class="breadcrumb__item"
-                        itemprop="itemListElement"
-                        itemscope
-                        itemtype="https://schema.org/ListItem">
-
-                        <a class="breadcrumb__link"
-                           href="index.html"
-                           itemprop="item">
-
-                            <span itemprop="name">Accueil</span>
-
-                        </a>
-
-                        <meta itemprop="position" content="1" />
-
-                        <span class="breadcrumb__sep"
-                              aria-hidden="true">/</span>
-
-                    </li>
-
-                    <li class="breadcrumb__item breadcrumb__item--current"
-                        itemprop="itemListElement"
-                        itemscope
-                        itemtype="https://schema.org/ListItem"
-                        aria-current="page">
-
-                        <span class="breadcrumb__current"
-                              itemprop="name">
-
-                              ${PAGE_LABELS[filename]}
-
-                        </span>
-
-                        <meta itemprop="position" content="2" />
-
-                    </li>
-
-                </ol>
-
-            </nav>
-        `;
-
-    } else {
-
-        container.style.display = 'none';
 
         return;
     }
 
-    container.innerHTML = html;
+    if (PAGE_LABELS[filename]) {
+        container.innerHTML = `
+            <nav class="breadcrumb" aria-label="Fil d'ariane">
+                <ol class="breadcrumb__list">
+
+                    <li class="breadcrumb__item">
+                        <a class="breadcrumb__link" href="index.html">
+                            Accueil
+                        </a>
+                        <span class="breadcrumb__sep">/</span>
+                    </li>
+
+                    <li
+                        class="breadcrumb__item breadcrumb__item--current"
+                        aria-current="page"
+                    >
+                        <span class="breadcrumb__current">
+                            ${PAGE_LABELS[filename]}
+                        </span>
+                    </li>
+
+                </ol>
+            </nav>
+        `;
+
+        return;
+    }
+
+    container.style.display = 'none';
 }
 
 buildBreadcrumb();

@@ -5,9 +5,9 @@
 
     &__top {
         display: flex;
-        justify-content: center;   /* centre les 3 blocs */
+        justify-content: center;   
         align-items: flex-start;
-        gap: 240px;                 /* espace entre les blocs */
+        gap: 240px;                
         padding-top: 10px;
     }
 
@@ -89,14 +89,14 @@
         &__ligne {
         height: 1px;
         background: rgba(0,0,0,0.1);
-        margin: 15px 270px 0;      /* ligne encore plus courte */
+        margin: 15px 270px 0;     
     }
 
     &__bas {
         display: flex;
-        justify-content: center;   /* centre les deux textes */
+        justify-content: center;   
         align-items: center;
-        gap: 745px;                 /* espace entre les deux */
+        gap: 745px;               
         padding: 16px 0;
 
         p {

@@ -1,4 +1,5 @@
 import { projets, disciplines, type Discipline, type Projet } from '../data/projets'
+import { url } from '../utils/url'
 
 type Filter = Discipline | 'all'
 
@@ -25,7 +26,7 @@ function rowHTML(p: Projet, i: number): string {
     <span class="row__text">${tag(p)}<span class="row__title">${p.title}</span></span>
   `
   if (p.href) {
-    return `<li style="--i:${i}"><a class="row" href="${p.href}">${inner}<span class="row__arrow">${ARROW}</span></a></li>`
+    return `<li style="--i:${i}"><a class="row" href="${url(p.href)}">${inner}<span class="row__arrow">${ARROW}</span></a></li>`
   }
   return `<li style="--i:${i}"><div class="row" tabindex="0">${inner}<span class="soon">À venir</span></div></li>`
 }
@@ -71,15 +72,15 @@ export function initIndex(): void {
     pDesc.textContent = p.description
     pTools.textContent = p.tools ?? ''
     pAction.innerHTML = p.href
-      ? `<a href="${p.href}" class="btn btn--primary">Voir le projet<span class="btn__dot" aria-hidden="true">${ARROW}</span></a>`
+      ? `<a href="${url(p.href)}" class="btn btn--primary">Voir le projet<span class="btn__dot" aria-hidden="true">${ARROW}</span></a>`
       : '<span class="soon">Étude de cas à venir</span>'
 
     const position = p.imagePosition ?? '50% 50%'
-    if (img.getAttribute('src') === p.image && img.style.objectPosition === position) return
+    if (img.getAttribute('src') === url(p.image) && img.style.objectPosition === position) return
 
     const show = (): void => img.classList.add('is-in')
     img.classList.remove('is-in')
-    img.src = p.image
+    img.src = url(p.image)
     img.style.objectPosition = position
     if (img.complete) requestAnimationFrame(() => requestAnimationFrame(show))
     else img.onload = show

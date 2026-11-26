@@ -1,3 +1,5 @@
+import { url, currentPath } from '../utils/url'
+
 type NavLink = {
   label: string
   href: string
@@ -11,9 +13,8 @@ const links: NavLink[] = [
 ]
 
 function currentHref(): string {
-  const path = window.location.pathname
+  const path = currentPath()
   if (path.startsWith('/projets/')) return '/projets.html'
-  if (path === '/index.html') return '/'
   return path
 }
 
@@ -27,7 +28,7 @@ export function renderHeader(): void {
     .map((link, i) => {
       const num = String(i + 1).padStart(2, '0')
       const current = link.href === active ? ' aria-current="page"' : ''
-      return `<a href="${link.href}"${current}><span class="num" aria-hidden="true">${num}</span>${link.label}</a>`
+      return `<a href="${url(link.href)}"${current}><span class="num" aria-hidden="true">${num}</span>${link.label}</a>`
     })
     .join('')
 

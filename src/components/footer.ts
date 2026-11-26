@@ -1,3 +1,5 @@
+import { url } from '../utils/url'
+
 type FooterLink = {
   label: string
   href: string
@@ -21,7 +23,8 @@ function linkList(links: FooterLink[]): string {
   return links
     .map((link) => {
       const target = link.external ? ' target="_blank" rel="noopener"' : ''
-      return `<a class="lnk" href="${link.href}"${target}>${link.label}</a>`
+      const href = link.external ? link.href : url(link.href)
+      return `<a class="lnk" href="${href}"${target}>${link.label}</a>`
     })
     .join('')
 }

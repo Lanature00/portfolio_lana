@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url'
 const root = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
+  base: '/portfolio_lana/',
   build: {
     rollupOptions: {
       input: {

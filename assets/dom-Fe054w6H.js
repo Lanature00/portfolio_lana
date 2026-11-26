@@ -1,0 +1,1 @@
+function e(e,t=document){let n=t.querySelector(e);if(!n)throw Error(`Élément introuvable : ${e}`);return n}function t(e,t=document){return Array.from(t.querySelectorAll(e))}function n(e){return String(e).padStart(2,`0`)}export{e as n,n as r,t};

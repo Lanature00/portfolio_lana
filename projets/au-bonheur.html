@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Au Bonheur — Lana Gilbart</title>
+    <script type="module" crossorigin src="/portfolio_lana/assets/main-DvYHyfiy.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio_lana/assets/main-C7jNiumn.css">
+  </head>
+  <body>
+    <div class="page" id="top">
+      <div data-header></div>
+
+      <main class="project project--code">
+        <section class="project-hero" aria-labelledby="page-title">
+          <div class="project-hero__inner">
+            <div class="project-hero__main">
+              <div class="project-hero__top">
+                <nav class="crumb" aria-label="Fil d'Ariane">
+                  <a class="lnk" href="/portfolio_lana/projets.html">← Projets</a>
+                  <span aria-hidden="true">/</span>
+                  <span aria-current="page">Au Bonheur</span>
+                </nav>
+                <span class="tag tag--pill"
+                  ><span class="dot dot--code" aria-hidden="true"></span>Code ·
+                  Full-stack</span
+                >
+              </div>
+
+              <h1 id="page-title" class="project-hero__title">
+                <span class="project-hero__name">Au<br />Bonheur</span>
+                <span class="project-hero__sub"
+                  >Réserver une table en ligne</span
+                >
+              </h1>
+
+              <p class="project-hero__lead">
+                Un site de réservation pour un restaurant asiatique à Paris,
+                <em>du parcours client</em> jusqu'à l'API qui le sert.
+              </p>
+            </div>
+
+            <dl class="fiche">
+              <div>
+                <dt>Rôle</dt>
+                <dd>Développeuse full-stack</dd>
+              </div>
+              <div>
+                <dt>Cadre</dt>
+                <dd>Proposé par un contact professionnel</dd>
+              </div>
+              <div>
+                <dt>Date</dt>
+                <dd>Juin — Août 2026</dd>
+              </div>
+              <div>
+                <dt>En ligne</dt>
+                <dd>
+                  <a
+                    class="lnk"
+                    href="https://aubonheur.vercel.app"
+                    target="_blank"
+                    rel="noopener"
+                    >aubonheur.vercel.app ↗</a
+                  >
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="project-cover" aria-label="Le site">
+          <figure>
+            <img
+              src="/portfolio_lana/img/projets/au-bonheur/accueil.webp"
+              alt="Page d'accueil du site Au Bonheur : fond sombre avec une photo de raviolis vapeur, le titre AU BONHEUR en capitales dorées, la phrase « L'authenticité des saveurs asiatiques au cœur de Paris » et deux boutons, Réserver une table et Découvrir le menu."
+            />
+            <figcaption class="cap">
+              <span>La page d'accueil · thème noir et or</span
+              ><span>React · Vite · Tailwind</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <nav class="som" aria-label="Sommaire du projet">
+          <span class="eyebrow">Sommaire</span>
+          <ol>
+            <li>
+              <a href="#s1"
+                ><i></i><span class="eyebrow">01</span
+                ><span class="som__label">Réserver</span></a
+              >
+            </li>
+            <li>
+              <a href="#s2"
+                ><i></i><span class="eyebrow">02</span
+                ><span class="som__label">Sur téléphone</span></a
+              >
+            </li>
+            <li>
+              <a href="#s3"
+                ><i></i><span class="eyebrow">03</span
+                ><span class="som__label">L'API</span></a
+              >
+            </li>
+            <li>
+              <a href="#s4"
+                ><i></i><span class="eyebrow">04</span
+                ><span class="som__label">Un jeton</span></a
+              >
+            </li>
+            <li>
+              <a href="#bref"
+                ><i></i><span class="eyebrow">Fin</span
+                ><span class="som__label">En bref</span></a
+              >
+            </li>
+          </ol>
+        </nav>
+
+        <section class="chapter" id="s1" aria-labelledby="c1">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">01 — Le parcours client</span>
+              <h2 class="ch__title" id="c1">Réserver</h2>
+            </div>
+            <p class="ch__intro">
+              Le front est écrit en TypeScript avec React, Vite et Tailwind,
+              découpé en composants. Le client choisit une date, le nombre de
+              personnes, puis laisse ses coordonnées. Depuis son compte, il
+              retrouve ses réservations et peut les annuler.
+            </p>
+          </div>
+
+          <div class="ab-split">
+            <div class="ab-theme">
+              <span class="eyebrow">Le thème noir et or</span>
+              <ul
+                class="swatches"
+                aria-label="Palette du site : noir, brun, or, bordeaux et crème"
+              >
+                <li><span style="--swatch: #0e0d09"></span>#0E0D09</li>
+                <li><span style="--swatch: #231f19"></span>#231F19</li>
+                <li><span style="--swatch: #b89252"></span>#B89252</li>
+                <li><span style="--swatch: #640b1b"></span>#640B1B</li>
+                <li><span style="--swatch: #faf8f4"></span>#FAF8F4</li>
+              </ul>
+              <span class="ab-theme__fonts">Cormorant Garamond · Inter</span>
+            </div>
+
+            <div class="ab-shots">
+              <figure class="shot">
+                <img
+                  src="/portfolio_lana/img/projets/au-bonheur/reservation.webp"
+                  alt="Page de réservation en ligne : un calendrier d'août 2026 où les dimanches sont fermés, le choix du nombre de personnes de 1 à 12 avec 2 sélectionné en bordeaux, et le formulaire de coordonnées."
+                />
+                <figcaption class="cap">
+                  La réservation : date, couverts, coordonnées
+                </figcaption>
+              </figure>
+              <figure class="shot shot--over">
+                <img
+                  src="/portfolio_lana/img/projets/au-bonheur/bandeau.webp"
+                  alt="Bandeau « Réservez votre expérience » sur une photo de table dressée, avec le bouton Réserver une table."
+                />
+                <figcaption class="cap">
+                  L'appel à réserver, sur l'accueil
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="s2" aria-labelledby="c2">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">02 — Le responsive</span>
+              <h2 class="ch__title" id="c2">Sur téléphone</h2>
+            </div>
+            <p class="ch__intro">
+              Le même site, pensé pour la main : la mise en page se resserre sur
+              une colonne, sans rien perdre du thème noir et or.
+            </p>
+          </div>
+
+          <div class="ab-mobile">
+            <ol class="numlist numlist--column">
+              <li>
+                <span class="numlist__n">01</span>
+                <div class="numlist__body">
+                  <h3>Le menu se replie</h3>
+                  <p>
+                    La navigation laisse place à un bouton à trois traits, en
+                    haut à droite, à côté du nom du restaurant.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span class="numlist__n">02</span>
+                <div class="numlist__body">
+                  <h3>Les boutons prennent la largeur</h3>
+                  <p>
+                    « Réserver une table » et « Découvrir le menu » s'empilent
+                    et occupent toute la largeur : faciles à toucher du pouce.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <span class="numlist__n">03</span>
+                <div class="numlist__body">
+                  <h3>La carte sur une colonne</h3>
+                  <p>
+                    Les plats passent les uns sous les autres, la photo
+                    au-dessus, le nom et la description en dessous.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <div class="phones">
+              <figure>
+                <div class="phone">
+                  <img
+                    src="/portfolio_lana/img/projets/au-bonheur/mobile-accueil.webp"
+                    alt="Accueil du site Au Bonheur sur téléphone : le nom en doré, un bouton menu à trois traits, le titre AU BONHEUR sur une photo de raviolis vapeur, puis les boutons Réserver une table et Découvrir le menu empilés sur toute la largeur."
+                  />
+                </div>
+                <figcaption class="cap">L'accueil</figcaption>
+              </figure>
+              <figure>
+                <div class="phone">
+                  <img
+                    src="/portfolio_lana/img/projets/au-bonheur/mobile-carte.webp"
+                    alt="La carte sur téléphone : une colonne de plats, chacun avec sa photo, son nom en doré et sa description : Dim Sum, puis Nouilles sautées."
+                  />
+                </div>
+                <figcaption class="cap">La carte</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter chapter--panel" id="s3" aria-labelledby="c3">
+          <div class="panel">
+            <div class="ch">
+              <div class="ch__text">
+                <span class="eyebrow">03 — Le serveur</span>
+                <h2 class="ch__title" id="c3">L'API</h2>
+              </div>
+              <p class="ch__intro">
+                Une API REST en Node.js et TypeScript, branchée sur PostgreSQL :
+                sept routes pour tout ce que le site doit lire et écrire. La
+                base tourne dans Docker en local et sur Render en production.
+              </p>
+            </div>
+
+            <div class="ab-api">
+              <div class="ab-security">
+                <span class="eyebrow">Sécurité</span>
+                <p>
+                  helmet · CORS · limitation du nombre de requêtes · requêtes
+                  SQL paramétrées · secrets dans un .env jamais publié
+                </p>
+              </div>
+
+              <ol class="routes" aria-label="Ce que l'API permet">
+                <li>
+                  <span class="routes__n">01</span>
+                  <div class="routes__body">
+                    <h3>S'inscrire</h3>
+                    <p>Un compte client, mot de passe haché avec bcrypt.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="routes__n">02</span>
+                  <div class="routes__body">
+                    <h3>Se connecter</h3>
+                    <p>L'API renvoie un jeton JWT.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="routes__n">03</span>
+                  <div class="routes__body">
+                    <h3>Réserver</h3>
+                    <p>Créer une réservation.</p>
+                  </div>
+                  <span class="tag"
+                    ><span class="dot dot--code" aria-hidden="true"></span
+                    >Client</span
+                  >
+                </li>
+                <li>
+                  <span class="routes__n">04</span>
+                  <div class="routes__body">
+                    <h3>Mes réservations</h3>
+                    <p>Les consulter à tout moment.</p>
+                  </div>
+                  <span class="tag"
+                    ><span class="dot dot--code" aria-hidden="true"></span
+                    >Client</span
+                  >
+                </li>
+                <li>
+                  <span class="routes__n">05</span>
+                  <div class="routes__body">
+                    <h3>Annuler</h3>
+                    <p>Annuler une de ses réservations.</p>
+                  </div>
+                  <span class="tag"
+                    ><span class="dot dot--code" aria-hidden="true"></span
+                    >Client</span
+                  >
+                </li>
+                <li>
+                  <span class="routes__n">06</span>
+                  <div class="routes__body">
+                    <h3>Tout voir</h3>
+                    <p>Toutes les réservations du restaurant.</p>
+                  </div>
+                  <span class="tag"
+                    ><span class="dot dot--ui" aria-hidden="true"></span
+                    >Admin</span
+                  >
+                </li>
+                <li>
+                  <span class="routes__n">07</span>
+                  <div class="routes__body">
+                    <h3>Changer le statut</h3>
+                    <p>Mettre à jour le statut d'une réservation.</p>
+                  </div>
+                  <span class="tag"
+                    ><span class="dot dot--ui" aria-hidden="true"></span
+                    >Admin</span
+                  >
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="s4" aria-labelledby="c4">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">04 — L'authentification</span>
+              <h2 class="ch__title" id="c4">Un jeton</h2>
+            </div>
+            <p class="ch__intro">
+              Une authentification JWT à deux rôles : chacun ne voit que ce qui
+              le concerne.
+            </p>
+          </div>
+
+          <ol class="steps" aria-label="Le trajet d'une requête">
+            <li>
+              <span class="eyebrow">Étape 1</span>
+              <h3>Connexion</h3>
+              <p>
+                L'utilisateur s'identifie ; son mot de passe est vérifié avec
+                bcrypt.
+              </p>
+            </li>
+            <li style="--step-bg: var(--c-code-tint)">
+              <span class="eyebrow">Étape 2</span>
+              <h3>Jeton signé</h3>
+              <p>L'API renvoie un JWT qui porte son rôle.</p>
+            </li>
+            <li style="--step-bg: var(--c-ui-tint)">
+              <span class="eyebrow">Étape 3 · rôle client</span>
+              <h3>Client</h3>
+              <p>Crée, consulte et annule ses propres réservations.</p>
+            </li>
+            <li style="--step-bg: var(--c-graphisme-tint)">
+              <span class="eyebrow">Étape 3 · rôle admin</span>
+              <h3>Admin</h3>
+              <p>Voit toutes les réservations et change leur statut.</p>
+            </li>
+          </ol>
+        </section>
+
+        <section class="chapter" id="bref" aria-labelledby="c-bref">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">Fin du parcours</span>
+              <h2 class="ch__title" id="c-bref">En bref</h2>
+            </div>
+          </div>
+
+          <div class="bref">
+            <div>
+              <span class="eyebrow">Outils</span>
+              <span class="bref__line"
+                >TypeScript · React · Vite · Tailwind · Node.js · PostgreSQL ·
+                Docker</span
+              >
+            </div>
+            <div>
+              <span class="eyebrow">Mise en ligne</span>
+              <span class="bref__line">Vercel · Render</span>
+              <p>
+                Le site est sur Vercel, l'API sur Render ; tout se redéploie à
+                chaque push. L'API est sur une offre gratuite : la première
+                requête peut prendre quelques secondes, le temps qu'elle se
+                réveille.
+              </p>
+              <span class="soon"
+                >Prochaine étape · paiement Stripe pour la vente à
+                emporter</span
+              >
+            </div>
+            <div>
+              <span class="eyebrow">Liens</span>
+              <div class="bref__links">
+                <a
+                  href="https://aubonheur.vercel.app"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--primary"
+                  >Visiter le site<span class="btn__dot" aria-hidden="true"
+                    ><svg width="14" height="14" viewBox="0 0 16 16">
+                      <path
+                        d="M5 11 11 5M6 5h5v5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      /></svg></span
+                ></a>
+                <a
+                  href="https://github.com/Lanature00/aubonheur"
+                  target="_blank"
+                  rel="noopener"
+                  class="btn btn--secondary"
+                  >Voir le code<span class="btn__dot" aria-hidden="true"
+                    ><svg width="14" height="14" viewBox="0 0 16 16">
+                      <path
+                        d="M5 11 11 5M6 5h5v5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      /></svg></span
+                ></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="next-line" aria-label="Projet suivant">
+          <a
+            href="/portfolio_lana/projets/appareil-photo.html"
+            class="next-line__link"
+            aria-label="Projet suivant : Appareil photo"
+          >
+            <div class="next-line__top">
+              <span class="eyebrow">Projet suivant · 02 / 06</span>
+              <ol class="next-line__steps" aria-hidden="true">
+                <li class="is-here"><i></i>01<span>&nbsp;Au Bonheur</span></li>
+                <li class="is-next">
+                  <i></i>02<span>&nbsp;Appareil photo</span>
+                </li>
+                <li><i></i>03</li>
+                <li><i></i>04</li>
+                <li><i></i>05</li>
+                <li><i></i>06</li>
+              </ol>
+            </div>
+            <img
+              class="next-line__thumb"
+              src="/portfolio_lana/img/projets/appareil-photo.webp"
+              alt=""
+            />
+            <span class="next-line__title">Appareil photo</span>
+            <span class="next-line__disc" aria-hidden="true"
+              ><svg width="18" height="18" viewBox="0 0 16 16">
+                <path
+                  d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
+          </a>
+        </section>
+      </main>
+
+      <div data-footer></div>
+    </div>
+  </body>
+</html>

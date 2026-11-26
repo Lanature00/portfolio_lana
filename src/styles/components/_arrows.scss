@@ -1,0 +1,43 @@
+.arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--c-ink);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--c-ink);
+    cursor: pointer;
+    transition: background .4s, color .4s, border-color .4s;
+
+    svg {
+      transition: transform .5s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    &:hover {
+      border-color: var(--c-seve);
+      background: var(--c-seve);
+      color: var(--c-light);
+    }
+
+    &:first-child:hover svg {
+      transform: translateX(-3px);
+    }
+
+    &:last-child:hover svg {
+      transform: translateX(3px);
+    }
+
+    &--dark {
+      border-color: var(--c-ink);
+      background: var(--c-ink);
+      color: var(--c-light);
+    }
+  }
+}

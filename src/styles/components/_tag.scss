@@ -1,0 +1,22 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  &--graphisme { background: var(--c-graphisme); }
+  &--ui { background: var(--c-ui); }
+  &--code { background: var(--c-code); }
+  &--data { background: var(--c-data); }
+}

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formes d'Amis — Lana Gilbart</title>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/pages/formes.ts"></script>
+  </head>
+  <body>
+    <div class="page" id="top">
+      <div data-header></div>
+
+      <main class="project project--code">
+        <section class="project-hero" aria-labelledby="page-title">
+          <div class="project-hero__inner">
+            <div class="project-hero__main">
+              <div class="project-hero__top">
+                <nav class="crumb" aria-label="Fil d'Ariane">
+                  <a class="lnk" href="/projets.html">← Projets</a>
+                  <span aria-hidden="true">/</span>
+                  <span aria-current="page">Formes d'Amis</span>
+                </nav>
+                <span class="tag tag--pill"><span class="dot dot--code" aria-hidden="true"></span>Interactivité · Installation · WebRTC</span>
+              </div>
+
+              <h1 id="page-title" class="project-hero__title">
+                <span class="project-hero__name">Formes<br>d'Amis</span>
+                <span class="project-hero__sub">Un appel vidéo drôle et anonyme</span>
+              </h1>
+
+              <p class="project-hero__lead">Une expérience interactive live conçue en 4 jours pour les Journées Portes Ouvertes de GOBELINS Paris : <em>deux salles, deux caméras</em>, et des visiteurs changés en formes géométriques animées.</p>
+            </div>
+
+            <dl class="fiche">
+              <div><dt>Rôle</dt><dd>Design &amp; canvas</dd></div>
+              <div><dt>Cadre</dt><dd>Portes Ouvertes · GOBELINS Paris</dd></div>
+              <div><dt>Date</dt><dd>2025 · en 4 jours</dd></div>
+              <div><dt>Avec</dt><dd>Maëlys Paoletti, Corentin Flaud, Nohlan Pieroni</dd></div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="project-cover" aria-label="L'installation à l'écran">
+          <figure>
+            <img src="/img/projets/formes-d-amis/capture.webp" alt="L'écran de l'installation : une étoile jaune aux grands yeux, bouche ouverte, incrustée dans une salle de classe vide ; en vignette, l'autre salle, où une étoile orange à lunettes fait coucou.">
+            <figcaption class="cap"><span>Ce que voit une salle · l'autre en vignette</span><span>Capture de l'installation</span></figcaption>
+          </figure>
+        </section>
+
+        <nav class="som" aria-label="Sommaire du projet">
+          <span class="eyebrow">Sommaire</span>
+          <ol>
+            <li><a href="#s1"><i></i><span class="eyebrow">01</span><span class="som__label">Deux salles, un appel</span></a></li>
+            <li><a href="#s2"><i></i><span class="eyebrow">02</span><span class="som__label">Trois briques</span></a></li>
+            <li><a href="#s3"><i></i><span class="eyebrow">03</span><span class="som__label">Design &amp; canvas</span></a></li>
+            <li><a href="#s4"><i></i><span class="eyebrow">04</span><span class="som__label">Trouver la salle</span></a></li>
+            <li><a href="#bref"><i></i><span class="eyebrow">Fin</span><span class="som__label">En bref</span></a></li>
+          </ol>
+        </nav>
+
+        <section class="chapter" id="s1" aria-labelledby="c1">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">01 — Fonctionnement</span>
+              <h2 class="ch__title" id="c1">Deux salles,<br>un appel</h2>
+            </div>
+            <blockquote class="fda-quote">
+              <p>« Notre dispositif permet de lever les barrières de la timidité grâce à des avatars, en offrant une zone de rencontres et d'interactions anonymes. »</p>
+              <footer class="cap">Le cartel de l'installation</footer>
+            </blockquote>
+          </div>
+
+          <ol class="numlist fda-steps">
+            <li><span class="numlist__n">01</span><div class="numlist__body"><h3>Deux caméras</h3><p>Deux salles distinctes. Chaque caméra capte les mouvements des participants en temps réel.</p><span class="tag"><span class="dot dot--code" aria-hidden="true"></span>Webcam · navigateur</span></div></li>
+            <li><span class="numlist__n">02</span><div class="numlist__body"><h3>Transformation</h3><p>La détection de posture transforme chaque personne en une forme géométrique animée et colorée.</p><span class="tag"><span class="dot dot--code" aria-hidden="true"></span>Mediapipe · p5.js</span></div></li>
+            <li><span class="numlist__n">03</span><div class="numlist__body"><h3>Connexion distante</h3><p>Le flux vidéo transformé part vers l'autre salle, comme un appel vidéo : drôle et anonyme.</p><span class="tag"><span class="dot dot--code" aria-hidden="true"></span>WebRTC</span></div></li>
+          </ol>
+
+          <div class="gal">
+            <div class="gal__row">
+              <figure style="--ratio: 1.333"><img src="/img/projets/formes-d-amis/salle.webp" alt="Pendant les Portes Ouvertes : un groupe de visiteurs lève les bras face à la projection, guidé par une étudiante vue de dos."></figure>
+              <figure style="--ratio: 1.333"><img src="/img/projets/formes-d-amis/projection.webp" alt="La projection dans l'autre salle : un triangle rose et deux étoiles orange à lunettes, avec bras et jambes, se tiennent entre les chaises."></figure>
+            </div>
+          </div>
+          <div class="cap gal__credit gal__credit--split"><span>Une salle : les visiteurs bougent</span><span>L'autre salle : les formes répondent</span></div>
+        </section>
+
+        <section class="chapter chapter--panel" id="s2" aria-labelledby="c2">
+          <div class="panel">
+            <div class="ch">
+              <div class="ch__text">
+                <span class="eyebrow">02 — Sous le capot</span>
+                <h2 class="ch__title" id="c2">Trois briques</h2>
+              </div>
+            </div>
+
+            <ul class="bricks">
+              <li><span class="eyebrow">Le lien</span><span class="bricks__name">WebRTC</span><p>La communication à distance, en temps réel, entre les deux salles.</p></li>
+              <li><span class="eyebrow">Le regard</span><span class="bricks__name">Mediapipe</span><p>La détection de la posture du corps, image par image.</p></li>
+              <li><span class="eyebrow">Le pinceau</span><span class="bricks__name">p5.js</span><p>Le rendu graphique des formes animées, dessinées dans un canvas.</p></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="chapter" id="s3" aria-labelledby="c3">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">03 — Mon rôle</span>
+              <h2 class="ch__title" id="c3">Design &amp; canvas</h2>
+            </div>
+          </div>
+
+          <div class="fda-role">
+            <p class="fda-role__text">Je me suis occupée du canvas et du CSS du projet : <em>les bras et les jambes</em> des personnages, leur assemblage avec les formes et les visages, et le tirage au hasard qui fait apparaître une nouvelle forme et un nouveau visage.</p>
+
+            <div class="draw">
+              <div class="draw__head">
+                <span class="tag"><span class="dot dot--code" aria-hidden="true"></span>Tirage n° <span data-draw-num>01</span></span>
+                <span class="tag" data-draw-label aria-live="polite">Étoile · Émerveillé</span>
+              </div>
+
+              <div class="draw__stage">
+                <svg viewBox="0 0 300 330" role="img" aria-label="Personnage : forme étoile, visage émerveillé, avec bras et jambes." data-draw-svg>
+                  <g fill="none" stroke="#23261F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                    <path class="draw__arm draw__arm--left" d="M112 150 Q40 168 22 122 M22 122 l-9 -2 M22 122 l-2 -10"/>
+                    <path class="draw__arm draw__arm--right" d="M188 150 Q260 168 278 122 M278 122 l9 -2 M278 122 l2 -10"/>
+                    <path d="M134 196 Q122 262 124 314 L108 314"/>
+                    <path d="M166 196 Q178 262 176 314 L192 314"/>
+                  </g>
+                  <g data-shape="0"><polygon points="150.0,34.0 178.2,103.2 252.7,108.6 195.7,156.8 213.5,229.4 150.0,190.0 86.5,229.4 104.3,156.8 47.3,108.6 121.8,103.2" fill="#F2D22E" stroke="#F2D22E" stroke-width="10" stroke-linejoin="round"/></g>
+                  <g data-shape="1" display="none"><polygon points="150,34 258,222 42,222" fill="#D45D5D" stroke="#D45D5D" stroke-width="10" stroke-linejoin="round"/></g>
+                  <g data-shape="2" display="none"><polygon points="250.0,135.0 234.7,149.9 244.0,169.2 224.5,178.0 226.6,199.3 205.3,200.9 200.0,221.6 179.4,215.8 167.4,233.5 150.0,221.0 132.6,233.5 120.6,215.8 100.0,221.6 94.7,200.9 73.4,199.3 75.5,178.0 56.0,169.2 65.3,149.9 50.0,135.0 65.3,120.1 56.0,100.8 75.5,92.0 73.4,70.7 94.7,69.1 100.0,48.4 120.6,54.2 132.6,36.5 150.0,49.0 167.4,36.5 179.4,54.2 200.0,48.4 205.3,69.1 226.6,70.7 224.5,92.0 244.0,100.8 234.7,120.1" fill="#36B4E5"/></g>
+                  <g data-shape="3" display="none" fill="#6DB487"><ellipse cx="150" cy="70" rx="38" ry="52"/><ellipse cx="150" cy="70" rx="38" ry="52" transform="rotate(60 150 135)"/><ellipse cx="150" cy="70" rx="38" ry="52" transform="rotate(120 150 135)"/><ellipse cx="150" cy="70" rx="38" ry="52" transform="rotate(180 150 135)"/><ellipse cx="150" cy="70" rx="38" ry="52" transform="rotate(240 150 135)"/><ellipse cx="150" cy="70" rx="38" ry="52" transform="rotate(300 150 135)"/><circle cx="150" cy="135" r="62"/></g>
+                  <g data-shape="4" display="none"><path d="M150 22 Q166 118 262 135 Q166 152 150 246 Q134 152 38 135 Q134 118 150 22Z" fill="#E8772E"/></g>
+                  <g class="draw__face" data-draw-face style="transform: translate(0px, 4px)">
+                    <g data-face="0"><ellipse cx="122" cy="124" rx="22" ry="18" fill="#FFF"/><ellipse cx="178" cy="124" rx="22" ry="18" fill="#FFF"/><circle cx="124" cy="120" r="13" fill="#111"/><circle cx="180" cy="120" r="13" fill="#111"/><path d="M126 156 L174 156 Q168 190 150 190 Q132 190 126 156Z" fill="#B8323A"/><ellipse cx="150" cy="182" rx="14" ry="7" fill="#F2A7C3"/></g>
+                    <g data-face="1" display="none"><circle cx="128" cy="126" r="15" fill="#FFF"/><circle cx="172" cy="126" r="15" fill="#FFF"/><circle cx="130" cy="126" r="9" fill="#111"/><circle cx="174" cy="126" r="9" fill="#111"/><path d="M112 100 Q126 92 140 100 M160 100 Q174 92 188 100" fill="none" stroke="#7A2A2A" stroke-width="5" stroke-linecap="round"/><path d="M132 158 Q150 172 168 158" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/></g>
+                    <g data-face="2" display="none"><path d="M110 124 Q150 98 190 124 Q150 150 110 124Z" fill="#FFF"/><circle cx="150" cy="124" r="15" fill="#111"/><path d="M108 150 Q150 186 192 150" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/></g>
+                    <g data-face="3" display="none"><ellipse cx="124" cy="126" rx="13" ry="12" fill="#2C2C2C"/><ellipse cx="176" cy="126" rx="13" ry="12" fill="#2C2C2C"/><rect x="96" y="102" width="50" height="46" rx="10" fill="rgba(255,255,255,.4)" stroke="#55585C" stroke-width="6"/><rect x="154" y="102" width="50" height="46" rx="10" fill="rgba(255,255,255,.4)" stroke="#55585C" stroke-width="6"/><path d="M146 122 L154 122" stroke="#55585C" stroke-width="6"/><path d="M124 160 L176 160 Q170 188 150 188 Q130 188 124 160Z" fill="#8E2B25"/><ellipse cx="150" cy="180" rx="13" ry="6" fill="#E9A3C9"/></g>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="draw__foot">
+                <button type="button" class="btn btn--primary" data-draw>Tirer une autre forme<span class="btn__dot" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+                <p class="draw__note">Démo redessinée pour le portfolio : dans l'installation, la forme suit le corps de la personne filmée.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="s4" aria-labelledby="c4">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">04 — Cartel et signalétique</span>
+              <h2 class="ch__title" id="c4">Trouver la salle</h2>
+            </div>
+            <p class="ch__intro">Un cartel pour présenter le dispositif, et des panneaux où les personnages montrent le chemin jusqu'aux deux salles. <span class="fda-todo">[À préciser : qui a conçu le cartel et les panneaux.]</span></p>
+          </div>
+
+          <div class="fda-grid">
+            <figure class="fda-grid__cartel"><img src="/img/projets/formes-d-amis/cartel.webp" alt="Le cartel : « JPO 2026 — GOBELINS Paris », le titre Formes d'Amis en grandes lettres noires, le texte de présentation, la liste de l'équipe et un triangle rose qui salue."></figure>
+            <figure><img src="/img/projets/formes-d-amis/signal-etoile.webp" alt="Panneau de signalétique : une étoile orange à lunettes en gros plan, et le titre Formes d'Amis avec une flèche vers la droite."></figure>
+            <figure><img src="/img/projets/formes-d-amis/signal-fleur.webp" alt="Panneau de signalétique : une fleur verte à un œil, l'engrenage bleu et le triangle rose, et une flèche vers la droite."></figure>
+          </div>
+          <div class="cap gal__credit gal__credit--split"><span>Le cartel</span><span>Les panneaux fléchés</span></div>
+        </section>
+
+        <section class="chapter" id="bref" aria-labelledby="c-bref">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">Fin du parcours</span>
+              <h2 class="ch__title" id="c-bref">En bref</h2>
+            </div>
+          </div>
+
+          <div class="bref">
+            <div>
+              <span class="eyebrow">Outils</span>
+              <span class="bref__line">Visual Studio Code · Canvas · CSS · JavaScript</span>
+            </div>
+            <div>
+              <span class="eyebrow">Technologies</span>
+              <span class="bref__line">WebRTC · Mediapipe · p5.js</span>
+            </div>
+            <div>
+              <span class="eyebrow">Équipe</span>
+              <p>Maëlys Paoletti, Corentin Flaud, Nohlan Pieroni et Lana Gilbart</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="next-line" aria-label="Projet suivant">
+          <a href="/projets/au-bonheur.html" class="next-line__link" aria-label="Projet suivant : Au Bonheur">
+            <div class="next-line__top">
+              <span class="eyebrow">Projet suivant · 01 / 06</span>
+              <ol class="next-line__steps" aria-hidden="true">
+                <li class="is-next"><i></i>01<span>&nbsp;Au Bonheur</span></li>
+                <li><i></i>02</li>
+                <li><i></i>03</li>
+                <li><i></i>04</li>
+                <li><i></i>05</li>
+                <li class="is-here"><i></i>06<span>&nbsp;Formes</span></li>
+              </ol>
+            </div>
+            <img class="next-line__thumb" src="/img/projets/au-bonheur/accueil.webp" alt="" style="object-position: 16% 55%">
+            <span class="next-line__title">Au Bonheur</span>
+            <span class="next-line__disc" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 16 16"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </section>
+      </main>
+
+      <div data-footer></div>
+    </div>
+  </body>
+</html>

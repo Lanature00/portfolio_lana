@@ -1,0 +1,37 @@
+:root {
+  --c-ink: #23261F;
+  --c-cream: #F1EEE7;
+  --c-cream-2: #EEEAE3;
+  --c-sheet: #FCFBF8;
+  --c-sand: #F3F1EC;
+  --c-hover: #ECE9E1;
+  --c-line: #E4E0D6;
+  --c-text-2: #3C4038;
+  --c-muted: #4A4E45;
+  --c-seve: #3F6E62;
+  --c-light: #FBF9F3;
+  --c-status: #6FA88B;
+
+  --c-graphisme: #EFBFD0;
+  --c-ui: #CFC3EA;
+  --c-code: #A6D8D4;
+  --c-data: #B9D69A;
+
+  --c-graphisme-tint: #F7E4EA;
+  --c-ui-tint: #ECE7F6;
+  --c-code-tint: #E2F2F0;
+  --c-data-tint: #EBF3DF;
+
+  --f-display: 'Italiana', 'Instrument Serif', Georgia, serif;
+  --f-serif: 'Instrument Serif', Georgia, serif;
+  --f-sans: 'Hanken Grotesk', system-ui, sans-serif;
+  --f-mono: 'DM Mono', ui-monospace, monospace;
+
+  --p: clamp(10px, 1.4vw, 18px);
+  --g: clamp(20px, 3vw, 48px);
+  --pi: calc(var(--g) - var(--p));
+  --s1: clamp(100px, 10vw, 160px);
+  --s2: clamp(80px, 8vw, 130px);
+  --s3: clamp(56px, 6vw, 96px);
+  --s4: clamp(40px, 4.5vw, 72px);
+}

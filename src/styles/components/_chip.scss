@@ -1,0 +1,92 @@
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 18px 0 14px;
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--c-muted);
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color .4s, color .4s;
+
+  &__ink {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    z-index: -1;
+    width: 8px;
+    height: 8px;
+    margin: -4px 0 0 -4px;
+    border-radius: 50%;
+    background: var(--chip-tint);
+    transform: scale(0);
+    transition: transform .8s cubic-bezier(.22, 1, .36, 1);
+  }
+
+  &__dot {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--chip-dot);
+    transition: transform .4s cubic-bezier(.22, 1, .36, 1), box-shadow .4s;
+  }
+
+  sup {
+    margin-left: -4px;
+    font-size: 9px;
+    letter-spacing: .04em;
+    color: #7A7D72;
+  }
+
+  &:hover {
+    border-color: var(--c-ink);
+    color: var(--c-ink);
+
+    .chip__dot {
+      transform: scale(1.5);
+    }
+  }
+
+  &[aria-pressed='true'] {
+    border-color: transparent;
+    color: var(--c-ink);
+
+    .chip__ink {
+      transform: scale(64);
+    }
+
+    .chip__dot {
+      box-shadow: 0 0 0 3px var(--c-sheet);
+    }
+
+    sup {
+      color: var(--c-ink);
+    }
+  }
+
+  &--all {
+    --chip-dot: conic-gradient(var(--c-graphisme) 0 25%, var(--c-ui) 0 50%, var(--c-code) 0 75%, var(--c-data) 0);
+    --chip-tint: linear-gradient(90deg, var(--c-graphisme-tint), var(--c-ui-tint), var(--c-code-tint), var(--c-data-tint));
+  }
+
+  &--graphisme { --chip-dot: var(--c-graphisme); --chip-tint: var(--c-graphisme-tint); }
+  &--ui { --chip-dot: var(--c-ui); --chip-tint: var(--c-ui-tint); }
+  &--code { --chip-dot: var(--c-code); --chip-tint: var(--c-code-tint); }
+  &--data { --chip-dot: var(--c-data); --chip-tint: var(--c-data-tint); }
+}

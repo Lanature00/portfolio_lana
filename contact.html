@@ -1,97 +1,353 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Lana Gilbart</title>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/pages/contact.ts"></script>
+  </head>
+  <body>
+    <div class="page" id="top">
+      <div data-header></div>
 
-    <div class="contact__success" id="contact-success">
-        Merci ! Je reviendrai vers vous rapidement pour discuter de l'opportunité.
+      <main>
+        <section class="contact-hero" aria-labelledby="page-title">
+          <p class="eyebrow contact-hero__eyebrow">Correspondance · Paris</p>
+          <h1 id="page-title" class="contact-hero__title">
+            Écrivons<span>ensemble</span>
+          </h1>
+        </section>
+
+        <section class="postcard" aria-label="Carte postale">
+          <div class="postcard__back" aria-hidden="true">
+            <img src="/img/contact/carte.webp" alt="" />
+          </div>
+
+          <div class="postcard__card">
+            <div class="postcard__left">
+              <form class="letter" aria-label="Lettre à Lana" data-letter>
+                <p class="letter__hello">Bonjour Lana,</p>
+                <p>
+                  Je m'appelle
+                  <label
+                    ><span class="sr-only">Votre nom</span
+                    ><input
+                      class="blank"
+                      type="text"
+                      name="name"
+                      autocomplete="name"
+                      placeholder="votre nom"
+                      required /></label
+                  >, et je vous écris au sujet
+                </p>
+
+                <div
+                  class="chips letter__topics"
+                  role="group"
+                  aria-label="Sujet de la lettre"
+                >
+                  <button
+                    type="button"
+                    class="chip chip--me"
+                    data-topic="alt"
+                    aria-pressed="true"
+                  >
+                    <span class="chip__ink" aria-hidden="true"></span
+                    ><span class="chip__dot" aria-hidden="true"></span>d'une
+                    alternance
+                  </button>
+                  <button
+                    type="button"
+                    class="chip chip--me"
+                    data-topic="pro"
+                    aria-pressed="false"
+                  >
+                    <span class="chip__ink" aria-hidden="true"></span
+                    ><span class="chip__dot" aria-hidden="true"></span>d'un
+                    projet
+                  </button>
+                  <button
+                    type="button"
+                    class="chip chip--me"
+                    data-topic="other"
+                    aria-pressed="false"
+                  >
+                    <span class="chip__ink" aria-hidden="true"></span
+                    ><span class="chip__dot" aria-hidden="true"></span>d'autre
+                    chose
+                  </button>
+                </div>
+
+                <label class="letter__message"
+                  ><span class="sr-only">Votre message</span
+                  ><textarea
+                    class="ruled"
+                    name="message"
+                    rows="4"
+                    required
+                    placeholder="Le poste, l'équipe, le rythme envisagé…"
+                    data-letter-message
+                  ></textarea>
+                </label>
+
+                <p>
+                  Vous pouvez me répondre à
+                  <label
+                    ><span class="sr-only">Votre e-mail</span
+                    ><input
+                      class="blank blank--wide"
+                      type="email"
+                      name="email"
+                      autocomplete="email"
+                      placeholder="votre@e-mail.fr"
+                      required /></label
+                  >.
+                </p>
+
+                <div class="letter__end">
+                  <p class="letter__hello">À très vite,</p>
+                  <button type="submit" class="btn btn--primary">
+                    Envoyer la lettre<span class="btn__dot" aria-hidden="true"
+                      ><svg width="14" height="14" viewBox="0 0 16 16">
+                        <path
+                          d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        /></svg
+                    ></span>
+                  </button>
+                </div>
+              </form>
+
+              <div class="thanks" role="status" data-thanks hidden>
+                <span class="thanks__stamp" aria-hidden="true"
+                  >Postée · Paris</span
+                >
+                <p class="thanks__title">Merci</p>
+                <p class="thanks__text">
+                  Votre messagerie s'est ouverte avec la lettre.
+                  <em>Je vous réponds très vite.</em>
+                </p>
+                <button
+                  type="button"
+                  class="btn btn--secondary"
+                  data-letter-reset
+                >
+                  Écrire une autre lettre<span
+                    class="btn__dot"
+                    aria-hidden="true"
+                    ><svg width="14" height="14" viewBox="0 0 16 16">
+                      <path
+                        d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      /></svg
+                  ></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="postcard__fold" aria-hidden="true"></div>
+
+            <div class="postcard__right">
+              <div class="postcard__stamps">
+                <svg
+                  class="postmark"
+                  viewBox="0 0 120 120"
+                  width="120"
+                  height="120"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <path
+                      id="postmark-path"
+                      d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"
+                    />
+                  </defs>
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="56"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                  />
+                  <circle
+                    cx="60"
+                    cy="60"
+                    r="32"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1"
+                  />
+                  <text
+                    font-family="DM Mono, monospace"
+                    font-size="9.5"
+                    letter-spacing="3"
+                    fill="currentColor"
+                  >
+                    <textPath href="#postmark-path">
+                      PARIS · GOBELINS · 2026 · PARIS · GOBELINS ·
+                    </textPath>
+                  </text>
+                  <text
+                    x="60"
+                    y="64"
+                    text-anchor="middle"
+                    font-family="Instrument Serif, serif"
+                    font-style="italic"
+                    font-size="15"
+                    fill="currentColor"
+                    data-postmark-time
+                  ></text>
+                </svg>
+                <div
+                  class="stamp"
+                  role="img"
+                  aria-label="Timbre aux quatre couleurs du portfolio"
+                >
+                  <div class="stamp__inner">
+                    <img src="/img/textures/graphisme.webp" alt="" />
+                    <span class="stamp__dots"
+                      ><i class="dot dot--graphisme"></i
+                      ><i class="dot dot--ui"></i><i class="dot dot--code"></i
+                      ><i class="dot dot--data"></i
+                    ></span>
+                    <span class="stamp__initials">LG</span>
+                  </div>
+                </div>
+              </div>
+
+              <address class="addr">
+                <span class="eyebrow">Destinataire</span>
+                <span class="addr__name">Lana Gilbart</span>
+                <span class="addr__row">
+                  <a class="lnk addr__mail" href="mailto:lanagilbart@gmail.com"
+                    >lanagilbart@gmail.com</a
+                  >
+                  <button
+                    type="button"
+                    class="copy"
+                    data-copy="lanagilbart@gmail.com"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      aria-hidden="true"
+                    >
+                      <rect
+                        x="5"
+                        y="5"
+                        width="8"
+                        height="9"
+                        rx="2"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.3"
+                      />
+                      <path
+                        d="M3 11V4a2 2 0 0 1 2-2h5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.3"
+                        stroke-linecap="round"
+                      /></svg
+                    ><span aria-live="polite" data-copy-label>Copier</span>
+                  </button>
+                </span>
+                <span class="addr__row addr__row--links">
+                  <a
+                    class="lnk"
+                    href="https://www.linkedin.com/in/lana-gilbart-lagy27061401"
+                    target="_blank"
+                    rel="noopener"
+                    >LinkedIn ↗</a
+                  >
+                  <a
+                    class="lnk"
+                    href="https://github.com/lanature00"
+                    target="_blank"
+                    rel="noopener"
+                    >GitHub ↗</a
+                  >
+                </span>
+                <span class="eyebrow addr__city">Paris · France</span>
+              </address>
+            </div>
+          </div>
+        </section>
+
+        <section class="ticket-row" aria-labelledby="ticket-title">
+          <div class="ticket-row__text">
+            <span class="eyebrow">Aller simple vers</span>
+            <h2 id="ticket-title" class="section-title">L'alternance</h2>
+            <p>Les infos utiles avant de m'écrire, sur un seul billet.</p>
+          </div>
+          <div class="ticket">
+            <dl>
+              <div>
+                <dt>Poste</dt>
+                <dd>Développeuse Web</dd>
+              </div>
+              <div>
+                <dt>Début</dt>
+                <dd>Dès que possible</dd>
+              </div>
+              <div>
+                <dt>Rythme</dt>
+                <dd>
+                  2s semaines en entreprise <br />2s semaines en formation
+                </dd>
+              </div>
+              <div>
+                <dt>École</dt>
+                <dd>Gobelins Paris</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="next-line" aria-label="Suite du parcours">
+          <a
+            href="/projets.html"
+            class="next-line__link"
+            aria-label="Retour aux projets"
+          >
+            <div class="next-line__top">
+              <span class="eyebrow">Retour · 02</span>
+              <ol class="next-line__steps" aria-hidden="true">
+                <li><i></i>01<span>&nbsp;Accueil</span></li>
+                <li class="is-next"><i></i>02<span>&nbsp;Projets</span></li>
+                <li><i></i>03<span>&nbsp;À propos</span></li>
+                <li class="is-here"><i></i>04<span>&nbsp;Contact</span></li>
+              </ol>
+            </div>
+            <img class="next-line__thumb" src="/img/textures/ui.webp" alt="" />
+            <span class="next-line__title">Projets</span>
+            <span class="next-line__disc" aria-hidden="true"
+              ><svg width="18" height="18" viewBox="0 0 16 16">
+                <path
+                  d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
+          </a>
+        </section>
+      </main>
+
+      <div data-footer></div>
     </div>
-
-    <div id="nav-container"></div>
-    <div id="breadcrumb-container"></div>
-
-    <section class="contact" id="contact">
-
-        <div class="contact__haut">
-            <span class="contact__tag">Alternance</span>
-            <h1 class="contact__titre">Vous recrutez<br><em>en alternance ?</em></h1>
-        </div>
-
-        <div class="contact__contenu">
-
-            <div class="contact__gauche">
-                <span class="contact__label">Dites-m'en plus sur votre entreprise</span>
-
-                <form class="contact__form" id="contact-form" action="https://formsubmit.co/ajax/lanagilbart@gmail.com" method="POST">
-                    <p class="contact__phrase">
-                        Bonjour Lana, je suis
-                        <input
-                            type="text"
-                            class="contact__input"
-                            name="prenom"
-                            placeholder="(votre prénom)"
-                            required
-                        >
-                        de chez
-                        <input
-                            type="text"
-                            class="contact__input"
-                            name="entreprise"
-                            placeholder="(nom de l'entreprise)"
-                            required
-                        >
-                        . Nous recherchons un(e) alternant(e) pour un poste en
-                        <input
-                            type="text"
-                            class="contact__input"
-                            name="poste"
-                            placeholder="(ex : Dev Web)"
-                            required
-                        >
-                        et votre profil nous intéresse. Contactez-moi à
-                        <input
-                            type="email"
-                            class="contact__input"
-                            name="email"
-                            placeholder="(votre email)"
-                            required
-                        >
-                    </p>
-
-                    <input type="hidden" name="_subject" value="Candidature alternance depuis le portfolio">
-                    <input type="hidden" name="_captcha" value="false">
-
-                    <button type="submit" class="contact__btn">Envoyer ma proposition</button>
-                </form>
-            </div>
-
-            <div class="contact__droite">
-
-                <div class="contact__card">
-                    <span class="contact__card-label">Email direct</span>
-                    <a href="mailto:lanagilbart@gmail.com" class="contact__email">lanagilbart@gmail.com</a>
-                </div>
-
-                <div class="contact__reseaux">
-                    <span class="contact__card-label">Réseaux sociaux</span>
-                    <a href="https://www.instagram.com/lanagilbart" class="contact__reseau" target="_blank" rel="noopener noreferrer">Instagram →</a>
-                    <a href="https://www.linkedin.com/in/lana-gilbart-aa6881382/" class="contact__reseau" target="_blank" rel="noopener noreferrer">LinkedIn →</a>
-                    <a href="https://github.com/Lanature00" class="contact__reseau" target="_blank" rel="noopener noreferrer">Github →</a>
-                </div>
-
-            </div>
-        </div>
-
-    </section>
-
-    <div id="footer-container"></div>
-
-    <script src="js/nav.js"></script>
-    <script src="js/contact.js"></script>
-</body>
+  </body>
 </html>

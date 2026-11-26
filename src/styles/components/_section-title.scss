@@ -1,0 +1,8 @@
+.section-title {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: clamp(44px, 5vw, 76px);
+  line-height: .9;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}

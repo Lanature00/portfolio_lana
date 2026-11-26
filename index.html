@@ -1,69 +1,217 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
-    <link rel="preload" as="image" href="img/background.webp">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lana Gilbart — Web designer</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <div class="page" id="top">
+      <div data-header></div>
 
-    <div id="nav-container"></div>
-
-    <header class="header">
-        <div class="header__fond"></div>
-        <div class="header__content">
-            <h1>LANA GILBART</h1>
-            <p>Développeuse · Designer</p>
-            
-            <div class="header__buttons">
-                <a href="portfolio.html" class="header__btn">Découvrir mes projets</a>
-                <a href="img/lanagilbart_cv.pdf" class="header__btn header__btn--cv" download> CV</a>
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero__inner">
+            <div class="hero__meta">
+              <span>Portfolio — 2026</span>
             </div>
 
-            <p class="header__description">Étudiante en développement web à Gobelins Paris, je suis à la recherche d'une alternance ( rythme : 2 semaines / 2 semaines ) axée sur le développement Front-End et l'UI/UX.</p>
-        </div>
-    </header>
+            <h1 id="hero-title" class="hero__title">
+              <span>Lana</span>
+              <span>Gilbart</span>
+            </h1>
 
-    <section class="travaux">
-        <div class="travaux__top">
-            <h2 class="travaux__titre">Une sélection de projets</h2>
-            <a href="portfolio.html" class="travaux__lien">Voir tous <span>→</span></a>
-        </div>
+            <div class="hero__intro">
+              <p>
+                <em class="hero__role">Web designer</em> en formation aux
+                Gobelins Paris — je recherche une
+                <strong>alternance</strong> pour dessiner et coder des
+                interfaces.
+              </p>
 
-        <div class="travaux__projets">
+              <div class="hero__actions">
+                <a
+                  href="/cv/lana-gilbart-cv.pdf"
+                  class="btn btn--primary"
+                  download
+                >
+                  Mon CV
+                  <span class="btn__dot" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16">
+                      <path
+                        d="M8 3v10M3.5 8.5 8 13l4.5-4.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </a>
+                <a href="/projets.html" class="btn btn--secondary btn--on-img">
+                  Voir les projets
+                  <span class="btn__dot" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16">
+                      <path
+                        d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <a href="formedamis.html" class="travaux__carte">
+        <section class="featured" aria-labelledby="featured-title">
+          <h2 id="featured-title" class="featured__title">À la une</h2>
+
+          <div class="featured__grid">
+            <a href="/projets/au-bonheur.html" class="feat">
+              <div class="feat__media">
                 <img
-                    src="img/formedamis.webp"
-                    srcset="img/Espagne.webp 400w, img/formedamis.webp 800w"
-                    sizes="(max-width: 768px) 100vw, 600px"
-                    alt="Livret de voyages">
-                <div class="travaux__carte__voile"></div>
-                <div class="travaux__carte__info">
-                    <span class="travaux__carte__label">Code</span>
-                    <span class="travaux__carte__nom">Formes d'amis</span>
+                  src="/img/projets/au-bonheur/accueil.webp"
+                  alt="Page d'accueil du site Au Bonheur : fond sombre avec une photo de raviolis vapeur et le titre AU BONHEUR en capitales dorées."
+                />
+                <span class="feat__disc" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 16 16">
+                    <path
+                      d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div class="feat__body">
+                <span class="feat__num">01</span>
+                <div class="feat__text">
+                  <span class="tag"
+                    ><span class="dot dot--code" aria-hidden="true"></span>Code
+                    · Full-stack</span
+                  >
+                  <h3>Au Bonheur</h3>
+                  <p>
+                    Réservation de restaurant, du front React à l'API : 7 routes
+                    et une authentification à 2 rôles.
+                  </p>
                 </div>
+              </div>
             </a>
 
-            <a href="aubonheur.html" class="travaux__carte">
-                <img
-                    src="img/aubonheur/aubonheur_home.png"
-                    alt="Au Bonheur">
-                <div class="travaux__carte__voile"></div>
-                <div class="travaux__carte__info">
-                    <span class="travaux__carte__label"> Front · Back · Interface</span>
-                    <span class="travaux__carte__nom">Au bonheur</span>
+            <ul class="entries">
+              <li>
+                <div class="entry">
+                  <span class="entry__num">02</span>
+                  <div class="entry__text">
+                    <span class="tag"
+                      ><span class="dot dot--data" aria-hidden="true"></span
+                      >Data</span
+                    >
+                    <h3>Bulle — « Tes Records »</h3>
+                    <p>4 KPI créés de A à Z pour une app de concentration.</p>
+                    <span class="soon">Étude de cas à venir</span>
+                  </div>
+                  <img
+                    class="entry__thumb"
+                    src="/img/textures/data.webp"
+                    alt=""
+                  />
                 </div>
-            </a>
+              </li>
+              <li>
+                <a class="entry" href="/projets/appareil-photo.html">
+                  <span class="entry__num">03</span>
+                  <div class="entry__text">
+                    <span class="tag"
+                      ><span
+                        class="dot dot--graphisme"
+                        aria-hidden="true"
+                      ></span
+                      >Graphisme · 3D</span
+                    >
+                    <h3>Appareil photo</h3>
+                    <p>
+                      Modélisé dans Blender, découpé pièce par pièce, animé en
+                      20 secondes.
+                    </p>
+                  </div>
+                  <img
+                    class="entry__thumb"
+                    src="/img/projets/appareil-photo.webp"
+                    alt=""
+                  />
+                </a>
+              </li>
+              <li>
+                <div class="entry">
+                  <span class="entry__num">04</span>
+                  <div class="entry__text">
+                    <span class="tag"
+                      ><span
+                        class="dot dot--graphisme"
+                        aria-hidden="true"
+                      ></span
+                      >Graphisme</span
+                    >
+                    <h3>Artik</h3>
+                    <p>Kakémonos, logo et carte de vœux illustrée.</p>
+                    <span class="soon">Étude de cas à venir</span>
+                  </div>
+                  <img
+                    class="entry__thumb"
+                    src="/img/textures/graphisme.webp"
+                    alt=""
+                  />
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-        </div>
-    </section>
+        <section class="next-line" aria-label="Suite du parcours">
+          <a
+            href="/projets.html"
+            class="next-line__link"
+            aria-label="Page suivante : Projets"
+          >
+            <div class="next-line__top">
+              <span class="eyebrow">Page suivante · 02</span>
+              <ol class="next-line__steps" aria-hidden="true">
+                <li class="is-here"><i></i>01<span>&nbsp;Accueil</span></li>
+                <li class="is-next"><i></i>02<span>&nbsp;Projets</span></li>
+                <li><i></i>03<span>&nbsp;À propos</span></li>
+                <li><i></i>04<span>&nbsp;Contact</span></li>
+              </ol>
+            </div>
+            <img class="next-line__thumb" src="/img/textures/ui.webp" alt="" />
+            <span class="next-line__title">Projets</span>
+            <span class="next-line__disc" aria-hidden="true"
+              ><svg width="18" height="18" viewBox="0 0 16 16">
+                <path
+                  d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
+          </a>
+        </section>
+      </main>
 
-    <div id="footer-container"></div>
-    <script src="js/nav.js"></script>
-    <script src="index.js"></script>
-
-</body>
+      <div data-footer></div>
+    </div>
+  </body>
 </html>

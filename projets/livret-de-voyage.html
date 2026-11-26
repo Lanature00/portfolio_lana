@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Livret de voyage — Lana Gilbart</title>
+    <script type="module" src="/src/main.ts"></script>
+    <script type="module" src="/src/pages/livret.ts"></script>
+  </head>
+  <body>
+    <div class="page" id="top">
+      <div data-header></div>
+
+      <main class="project project--graphisme">
+        <section class="project-hero" aria-labelledby="page-title">
+          <div class="project-hero__inner">
+            <div class="project-hero__main">
+              <div class="project-hero__top">
+                <nav class="crumb" aria-label="Fil d'Ariane">
+                  <a class="lnk" href="/projets.html">← Projets</a>
+                  <span aria-hidden="true">/</span>
+                  <span aria-current="page">Livret de voyage</span>
+                </nav>
+                <span class="tag tag--pill"
+                  ><span class="dot dot--graphisme" aria-hidden="true"></span
+                  >Graphisme · Édition · Print</span
+                >
+              </div>
+
+              <h1 id="page-title" class="project-hero__title">
+                <span class="project-hero__name">Livret<br />de voyage</span>
+                <span class="project-hero__sub"
+                  >Paris — Barcelone, décembre 2024</span
+                >
+              </h1>
+
+              <p class="project-hero__lead">
+                Conception graphique complète d'un guide de voyage :
+                <em
+                  >mise en page, choix typographiques, traitement de la
+                  photographie</em
+                >
+                et narration visuelle, sur 8 pages, pour faire du programme du
+                séjour un feuillet touristique.
+              </p>
+            </div>
+
+            <dl class="fiche">
+              <div>
+                <dt>Rôle</dt>
+                <dd>Conception graphique complète</dd>
+              </div>
+              <div>
+                <dt>Cadre</dt>
+                <dd>Terminale · voyage scolaire en Espagne</dd>
+              </div>
+              <div>
+                <dt>Date</dt>
+                <dd>Décembre 2024</dd>
+              </div>
+              <div>
+                <dt>Format</dt>
+                <dd>A5 · 8 pages · en anglais</dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="project-cover" aria-label="Le livret imprimé">
+          <figure>
+            <img
+              src="/img/projets/livret-de-voyage/mockup.webp"
+              alt="Le livret ouvert en mise en situation, sur les pages du mardi 3 et du mercredi 4 décembre, bordées de la frise d'azulejos."
+            />
+            <figcaption class="cap">
+              <span>Les pages 2 et 3, ouvertes</span
+              ><span>Mise en situation</span>
+            </figcaption>
+          </figure>
+        </section>
+
+        <nav class="som" aria-label="Sommaire du projet">
+          <span class="eyebrow">Sommaire</span>
+          <ol>
+            <li>
+              <a href="#s1"
+                ><i></i><span class="eyebrow">01</span
+                ><span class="som__label">Feuilleter</span></a
+              >
+            </li>
+            <li>
+              <a href="#s2"
+                ><i></i><span class="eyebrow">02</span
+                ><span class="som__label">Le fil du voyage</span></a
+              >
+            </li>
+            <li>
+              <a href="#bref"
+                ><i></i><span class="eyebrow">Fin</span
+                ><span class="som__label">En bref</span></a
+              >
+            </li>
+          </ol>
+        </nav>
+
+        <section class="chapter" id="s1" aria-labelledby="c1">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">01 — Le livret, page par page</span>
+              <h2 class="ch__title" id="c1">Feuilleter</h2>
+            </div>
+            <p class="ch__intro">
+              Un jour par page ou presque, du départ de la gare de Lyon au
+              retour de Figueres. Choisissez une page ou avancez avec les
+              flèches.
+            </p>
+          </div>
+
+          <div class="flip">
+            <div class="flip__frame">
+              <div class="flip__pages">
+                <img
+                  class="flip__page flip__page--contain"
+                  data-page="0"
+                  aria-hidden="true"
+                  src="/img/projets/livret-de-voyage/couverture.webp"
+                  alt="Le livret posé sur une table en bois : la couverture montre Gérone et ses maisons colorées au bord de l'eau, encadrée d'une frise d'azulejos bleus et jaunes, avec les horaires du trajet."
+                />
+                <img
+                  class="flip__page is-on"
+                  data-page="1"
+                  src="/img/projets/livret-de-voyage/page-2.webp"
+                  alt="Page 2, mardi 3 décembre : la date en grand, verticale, le long du bord ; le trajet Paris – Montpellier – Gérone et deux photos de Gérone."
+                />
+                <img
+                  class="flip__page"
+                  data-page="2"
+                  aria-hidden="true"
+                  src="/img/projets/livret-de-voyage/page-3.webp"
+                  alt="Page 3, mercredi 4 décembre : la crypte de la Colònia Güell, la Casa Bellesguard et la Casa Batlló, avec les textes du programme en escalier."
+                />
+                <img
+                  class="flip__page"
+                  data-page="3"
+                  aria-hidden="true"
+                  src="/img/projets/livret-de-voyage/page-4.webp"
+                  alt="Page 4 : le Passeig de Gràcia de nuit en grande photo, avec un texte de présentation."
+                />
+                <img
+                  class="flip__page"
+                  data-page="4"
+                  aria-hidden="true"
+                  src="/img/projets/livret-de-voyage/page-5.webp"
+                  alt="Page 5, jeudi 5 décembre : le marché de la Boqueria, la cascade du parc de la Ciutadella et le programme de la journée."
+                />
+                <img
+                  class="flip__page"
+                  data-page="5"
+                  aria-hidden="true"
+                  src="/img/projets/livret-de-voyage/page-6.webp"
+                  alt="Page 6 : une ruelle du quartier gothique et la fontaine du parc de la Ciutadella."
+                />
+                <img
+                  class="flip__page"
+                  data-page="6"
+                  aria-hidden="true"
+                  src="/img/projets/livret-de-voyage/page-7.webp"
+                  alt="Page 7 : quatre œuvres du musée Dalí de Figueres et un texte sur le musée."
+                />
+                <img
+                  class="flip__page"
+                  data-page="7"
+                  aria-hidden="true"
+                  src="/img/projets/livret-de-voyage/page-8.webp"
+                  alt="Page 8, vendredi 6 décembre : le musée Dalí, les horaires du retour Barcelone – Montpellier – Paris en ligne de temps, et un train régional."
+                />
+              </div>
+            </div>
+
+            <div class="flip__side">
+              <div class="flip__info" aria-live="polite">
+                <span class="flip__num" data-page-num>02</span>
+                <span class="flip__text">
+                  <span class="tag"
+                    ><span class="dot dot--graphisme" aria-hidden="true"></span
+                    ><span data-page-count>Page 02 / 08</span></span
+                  >
+                  <span class="flip__title" data-page-title
+                    >Mardi 3 décembre</span
+                  >
+                  <span class="flip__sub" data-page-sub
+                    >Le TGV jusqu'à Montpellier, puis le car jusqu'à Gérone et
+                    son quartier juif.</span
+                  >
+                </span>
+              </div>
+
+              <div class="arrows">
+                <button
+                  type="button"
+                  class="arrows__btn"
+                  data-page-prev
+                  aria-label="Page précédente"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 16 16"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M13 8H3M7.5 3.5 3 8l4.5 4.5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  class="arrows__btn arrows__btn--dark"
+                  data-page-next
+                  aria-label="Page suivante"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 16 16"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <div class="thumbs" role="group" aria-label="Choisir une page">
+                <button
+                  type="button"
+                  class="thumbs__btn"
+                  data-thumb="0"
+                  aria-label="Couverture"
+                >
+                  <img
+                    src="/img/projets/livret-de-voyage/couverture.webp"
+                    alt=""
+                    style="object-position: 62% 62%"
+                  /><span>Couv.</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumbs__btn"
+                  data-thumb="1"
+                  aria-label="Page 2"
+                  aria-current="true"
+                >
+                  <img
+                    src="/img/projets/livret-de-voyage/page-2.webp"
+                    alt=""
+                  /><span>02</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumbs__btn"
+                  data-thumb="2"
+                  aria-label="Page 3"
+                >
+                  <img
+                    src="/img/projets/livret-de-voyage/page-3.webp"
+                    alt=""
+                  /><span>03</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumbs__btn"
+                  data-thumb="3"
+                  aria-label="Page 4"
+                >
+                  <img
+                    src="/img/projets/livret-de-voyage/page-4.webp"
+                    alt=""
+                  /><span>04</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumbs__btn"
+                  data-thumb="4"
+                  aria-label="Page 5"
+                >
+                  <img
+                    src="/img/projets/livret-de-voyage/page-5.webp"
+                    alt=""
+                  /><span>05</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumbs__btn"
+                  data-thumb="5"
+                  aria-label="Page 6"
+                >
+                  <img
+                    src="/img/projets/livret-de-voyage/page-6.webp"
+                    alt=""
+                  /><span>06</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumbs__btn"
+                  data-thumb="6"
+                  aria-label="Page 7"
+                >
+                  <img
+                    src="/img/projets/livret-de-voyage/page-7.webp"
+                    alt=""
+                  /><span>07</span>
+                </button>
+                <button
+                  type="button"
+                  class="thumbs__btn"
+                  data-thumb="7"
+                  aria-label="Page 8"
+                >
+                  <img
+                    src="/img/projets/livret-de-voyage/page-8.webp"
+                    alt=""
+                  /><span>08</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" id="s2" aria-labelledby="c2">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">02 — Les choix graphiques</span>
+              <h2 class="ch__title" id="c2">Le fil du voyage</h2>
+            </div>
+          </div>
+
+          <figure class="frieze">
+            <img
+              src="/img/projets/livret-de-voyage/frise.webp"
+              alt="La frise d'azulejos : carreaux bleus et jaunes à motifs de losanges, de pétales et de fleurs."
+            />
+            <figcaption class="cap">
+              La frise d'azulejos, en haut et en bas de chaque page
+            </figcaption>
+          </figure>
+
+          <ol class="numlist">
+            <li>
+              <span class="numlist__n">01</span>
+              <div class="numlist__body">
+                <h3>La frise</h3>
+                <p>
+                  Des azulejos bleus et jaunes encadrent chaque page : le
+                  carreau de céramique espagnol devient le fil visuel du livret.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="numlist__n">02</span>
+              <div class="numlist__body">
+                <h3>La date verticale</h3>
+                <p>
+                  Chaque journée s'ouvre sur sa date, composée en grand le long
+                  du bord : on se repère d'un coup d'œil.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="numlist__n">03</span>
+              <div class="numlist__body">
+                <h3>Le texte en escalier</h3>
+                <p>
+                  Les blocs de texte descendent en alternance avec les photos,
+                  au rythme d'une journée : le matin, l'après-midi, le soir.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="numlist__n">04</span>
+              <div class="numlist__body">
+                <h3>L'horaire</h3>
+                <p>
+                  Sur la couverture et en dernière page, les horaires forment
+                  une ligne de temps, comme un tableau de gare.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="chapter" id="bref" aria-labelledby="c-bref">
+          <div class="ch">
+            <div class="ch__text">
+              <span class="eyebrow">Fin du parcours</span>
+              <h2 class="ch__title" id="c-bref">En bref</h2>
+            </div>
+          </div>
+
+          <div class="bref">
+            <div>
+              <span class="eyebrow">Outils</span>
+              <span class="bref__line">Photoshop · InDesign</span>
+            </div>
+            <div>
+              <span class="eyebrow">Photographies</span>
+            </div>
+            <div>
+              <span class="eyebrow">Feuilleter</span>
+              <div class="bref__links">
+                <a href="#s1" class="btn btn--secondary btn--up"
+                  >Revoir le livret<span class="btn__dot" aria-hidden="true"
+                    ><svg width="14" height="14" viewBox="0 0 16 16">
+                      <path
+                        d="M8 13V3M3.5 7.5 8 3l4.5 4.5"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      /></svg></span
+                ></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="next-line" aria-label="Projet suivant">
+          <a
+            href="/projets/formes-d-amis.html"
+            class="next-line__link"
+            aria-label="Projet suivant : Formes d'Amis"
+          >
+            <div class="next-line__top">
+              <span class="eyebrow">Projet suivant · 06 / 06</span>
+              <ol class="next-line__steps" aria-hidden="true">
+                <li><i></i>01</li>
+                <li><i></i>02</li>
+                <li><i></i>03</li>
+                <li><i></i>04</li>
+                <li class="is-here"><i></i>05<span>&nbsp;Livret</span></li>
+                <li class="is-next"><i></i>06<span>&nbsp;Formes</span></li>
+              </ol>
+            </div>
+            <img
+              class="next-line__thumb"
+              src="/img/projets/formes-d-amis/capture.webp"
+              alt=""
+            />
+            <span class="next-line__title">Formes d'Amis</span>
+            <span class="next-line__disc" aria-hidden="true"
+              ><svg width="18" height="18" viewBox="0 0 16 16">
+                <path
+                  d="M3 8h10M8.5 3.5 13 8l-4.5 4.5"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></span>
+          </a>
+        </section>
+      </main>
+
+      <div data-footer></div>
+    </div>
+  </body>
+</html>

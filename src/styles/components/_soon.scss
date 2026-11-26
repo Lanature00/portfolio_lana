@@ -1,0 +1,14 @@
+.soon {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px dashed #CFCBC0;
+  border-radius: 999px;
+  font-family: var(--f-mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}

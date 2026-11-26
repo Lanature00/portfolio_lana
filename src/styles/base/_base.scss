@@ -1,0 +1,23 @@
+html {
+  @media (min-width: 761px) {
+    zoom: .95;
+  }
+
+  @media (min-width: 1024px) {
+    zoom: .9;
+  }
+}
+
+body {
+  padding: 14px;
+  background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-cream-2) 100%);
+  color: var(--c-ink);
+  font-family: var(--f-sans);
+}
+
+.page {
+  min-height: calc(100vh - 28px);
+  border-radius: 36px;
+  background: var(--c-sheet);
+  overflow: clip;
+}
